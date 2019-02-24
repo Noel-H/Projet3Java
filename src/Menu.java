@@ -16,26 +16,28 @@ public class Menu {
             Scanner sc = new Scanner(System.in);
             int selectionChoiceMenu = sc.nextInt();
 
-            if (selectionChoiceMenu == 1) {
+            switch (selectionChoiceMenu) {
+                case 1:
 
-                ModePlusMinus modePlusMinus = new ModePlusMinus();
-                modePlusMinus.runGamePlusMinus();
+                    ModePlusMinus modePlusMinus = new ModePlusMinus();
+                    modePlusMinus.runGamePlusMinus();
+                    selectedMenu = true;
 
-                selectedMenu = true;
+                    break;
 
-            } else if (selectionChoiceMenu==3){
+                case 3:
 
-                System.out.println("Bye bye.");
+                    System.out.println("Bye bye.");
 
-                selectedMenu = true;
+                    selectedMenu = true;
 
+                    break;
 
-            } else {
+                default:
 
-                System.out.println();
-                System.out.println("Choix indisponible pour le moment.");
-                System.out.println();
-
+                    System.out.println();
+                    System.out.println("Choix indisponible pour le moment.");
+                    System.out.println();
             }
         }
     }
