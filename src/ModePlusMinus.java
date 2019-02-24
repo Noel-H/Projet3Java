@@ -6,23 +6,23 @@ public class ModePlusMinus {
 
         int nbGenerate1;
         nbGenerate1 = (int) (Math.random() * 10);
-//        System.out.println(nbGenerate1);
+        System.out.println(nbGenerate1);
 
         int nbGenerate2;
         nbGenerate2 = (int) (Math.random() * 10);
-//        System.out.println(nbGenerate2);
+        System.out.println(nbGenerate2);
 
         int nbGenerate3;
         nbGenerate3 = (int) (Math.random() * 10);
-//       System.out.println(nbGenerate3);
+       System.out.println(nbGenerate3);
 
         int nbGenerate4;
         nbGenerate4 = (int) (Math.random() * 10);
-//        System.out.println(nbGenerate4);
+        System.out.println(nbGenerate4);
 
         System.out.println("Le code est généré.");
         System.out.println("Code à trouver = ????");
-//        System.out.println("Code à trouver = " + nbGenerate1 + " | " + nbGenerate2 + " | " + nbGenerate3 + " | " + nbGenerate4);
+        System.out.println("Code à trouver = " + nbGenerate1 + " | " + nbGenerate2 + " | " + nbGenerate3 + " | " + nbGenerate4);
         System.out.println();
 
         boolean success = false;
