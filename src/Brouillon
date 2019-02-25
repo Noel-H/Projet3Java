@@ -1,0 +1,10 @@
+
+ Tableau generant des chifres aléatoire
+
+ int numberToFind[]= new int[4];
+
+     for(int i=0; i < numberToFind.length; i++){
+         numberToFind[i]=(int) (Math.random() * 10);
+           System.out.println("À l'emplacement " + i +" du tableau nous avons = " + numberToFind[i]);
+
+     }
