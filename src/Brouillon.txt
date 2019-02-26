@@ -1,4 +1,47 @@
+generer 4 chiffre
+convertir en String
+cast int
+modulo(avec boucle while)
+=chiffresATrouver
 
+scanner
+modulo
+
+verifier si tableau chiffreATrouver == tableau sc
+
+---
+
+public class MyClass {
+    public static void main(String args[]) {
+      int numberToFind[]= new int[4];
+      String number="";
+
+     for(int i=0; i < numberToFind.length; i++){
+         numberToFind[i]=(int) (Math.random() * 10);
+           System.out.println("À l'emplacement " + i +" du tableau nous avons = " + numberToFind[i]);
+           String conversion = Integer.toString(numberToFind[i]);
+           number=number+conversion;
+
+     }
+
+     System.out.println(number);
+     //String str = "1";
+     //str = str+"2";
+     //System.out.println(str);
+
+    }
+}
+
+---
+
+
+
+
+
+
+
+
+------
  Tableau generant des chifres aléatoire
 
  int numberToFind[]= new int[4];
