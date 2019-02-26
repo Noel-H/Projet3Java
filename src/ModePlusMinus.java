@@ -14,12 +14,13 @@ public class ModePlusMinus {
 
         int nbGenerate3;
         nbGenerate3 = (int) (Math.random() * 10);
-       System.out.println(nbGenerate3);
+        System.out.println(nbGenerate3);
 
         int nbGenerate4;
         nbGenerate4 = (int) (Math.random() * 10);
         System.out.println(nbGenerate4);
 
+        System.out.println();
         System.out.println("Le code est généré.");
         System.out.println("Code à trouver = ????");
         System.out.println("Code à trouver = " + nbGenerate1 + " | " + nbGenerate2 + " | " + nbGenerate3 + " | " + nbGenerate4);
@@ -143,7 +144,8 @@ public class ModePlusMinus {
 
         System.out.println("GG WP !!");
         System.out.println();
-        Menu.principalMenu();
+        Menu menu = new Menu();
+        menu.endGameMenu();
 
     }
 }

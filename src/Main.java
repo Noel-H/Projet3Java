@@ -2,7 +2,8 @@ public class Main {
 
     static public void main(String... args) {
 
-        Menu.principalMenu();
+        Menu menu = new Menu();
+        menu.principalMenu();
 
     }
 }
