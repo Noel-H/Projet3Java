@@ -3,70 +3,70 @@ public class Main {
 
     static public void main(String... args) {
 
-//        Menu.principalMenu();
+        Menu.principalMenu();
 
 
-        int resultatScanner = 10;
-        int numberToFind[] = new int[resultatScanner];
-        String numberString = "";
-
-
-        for (int i = 0; i < numberToFind.length; i++) {
-            numberToFind[i] = (int) (Math.random() * 10);
-            System.out.println("À l'emplacement " + i + " du tableau nous avons = " + numberToFind[i]);
-            String conversion = Integer.toString(numberToFind[i]);
-            numberString = numberString + " | "+conversion;
-
-        }
-        System.out.println(numberString);
-
-
-        String playerReponse = "0123456789";
-
-        String playerResponseTableau[] = new String[resultatScanner];
-
-        String numberResponseString="";
-
-        int numberIntResponseTableau[] = new int[resultatScanner];
-
-//        playerResponseTableau[0] = Character.toString(playerReponse.charAt(0));
+//        int resultatScanner = 10;
+//        int numberToFind[] = new int[resultatScanner];
+//        String numberString = "";
 //
-//        System.out.println(playerResponseTableau[0]);
-
-
-        for (int i = 0; i < playerResponseTableau.length; i++) {
-            playerResponseTableau[i] = Character.toString(playerReponse.charAt(i));
-            numberIntResponseTableau[i] = Integer.parseInt(playerResponseTableau[i]);
-            System.out.println("Tableau String = "+playerResponseTableau[i]);
-            System.out.println("Tableau Int = "+numberIntResponseTableau[i]);
-            numberResponseString=numberResponseString+" | "+playerResponseTableau[i];
-
-        }
-
-        //System.out.println(numberResponseString);
-
-
-        String resultat[]=new String[resultatScanner];
-        String resultatEnString="";
-
-        for (int i = 0; i < playerResponseTableau.length; i++) {
-            if (numberToFind[i]>numberIntResponseTableau[i]){
-                resultat[i]="+";
-            }else if (numberToFind[i]<numberIntResponseTableau[i]){
-                resultat[i]="-";
-            }else if (numberToFind[i]==numberIntResponseTableau[i]){
-                resultat[i]="=";
-            }else {
-                System.out.println("Error");
-            }
-
-            resultatEnString=resultatEnString+" | "+resultat[i];
-
-        }
-
-        System.out.println(numberString);
-        System.out.println(numberResponseString);
-        System.out.println(resultatEnString);
+//
+//        for (int i = 0; i < numberToFind.length; i++) {
+//            numberToFind[i] = (int) (Math.random() * 10);
+//            System.out.println("À l'emplacement " + i + " du tableau nous avons = " + numberToFind[i]);
+//            String conversion = Integer.toString(numberToFind[i]);
+//            numberString = numberString + " | "+conversion;
+//
+//        }
+//        System.out.println(numberString);
+//
+//
+//        String playerReponse = "0123456789";
+//
+//        String playerResponseTableau[] = new String[resultatScanner];
+//
+//        String numberResponseString="";
+//
+//        int numberIntResponseTableau[] = new int[resultatScanner];
+//
+////        playerResponseTableau[0] = Character.toString(playerReponse.charAt(0));
+////
+////        System.out.println(playerResponseTableau[0]);
+//
+//
+//        for (int i = 0; i < playerResponseTableau.length; i++) {
+//            playerResponseTableau[i] = Character.toString(playerReponse.charAt(i));
+//            numberIntResponseTableau[i] = Integer.parseInt(playerResponseTableau[i]);
+//            System.out.println("Tableau String = "+playerResponseTableau[i]);
+//            System.out.println("Tableau Int = "+numberIntResponseTableau[i]);
+//            numberResponseString=numberResponseString+" | "+playerResponseTableau[i];
+//
+//        }
+//
+//        //System.out.println(numberResponseString);
+//
+//
+//        String resultat[]=new String[resultatScanner];
+//        String resultatEnString="";
+//
+//        for (int i = 0; i < playerResponseTableau.length; i++) {
+//            if (numberToFind[i]>numberIntResponseTableau[i]){
+//                resultat[i]="+";
+//            }else if (numberToFind[i]<numberIntResponseTableau[i]){
+//                resultat[i]="-";
+//            }else if (numberToFind[i]==numberIntResponseTableau[i]){
+//                resultat[i]="=";
+//            }else {
+//                System.out.println("Error");
+//            }
+//
+//            resultatEnString=resultatEnString+" | "+resultat[i];
+//
+//        }
+//
+//        System.out.println(numberString);
+//        System.out.println(numberResponseString);
+//        System.out.println(resultatEnString);
 
 
 //
