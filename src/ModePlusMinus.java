@@ -4,148 +4,163 @@ public class ModePlusMinus {
 
     void runGamePlusMinus() {
 
-        int nbGenerate1;
-        nbGenerate1 = (int) (Math.random() * 10);
-        System.out.println(nbGenerate1);
+        int resultatScanner = 4; //Indique le nombre de chiffre a trouver
+        int numberToFind[] = new int[resultatScanner]; // tableau qui stock le nmbre aleatoire
+        String numberString = "";
+        String chiffreInconnuTableau[] = new String[resultatScanner]; // tableau qui affiche les chiffres trouver au fur et a mesure
+        String chiffreInconnu = "";
+        int nbTrouver = 0;
 
-        int nbGenerate2;
-        nbGenerate2 = (int) (Math.random() * 10);
-        System.out.println(nbGenerate2);
+//Generation des chiffres aléatoires et les stock dans un tableau.
+        //
+        for (int i = 0; i < numberToFind.length; i++) {
+            numberToFind[i] = (int) (Math.random() * 10);
+            //System.out.println("À l'emplacement " + i + " du tableau nous avons = " + numberToFind[i]); // Verbose
+            String conversion = Integer.toString(numberToFind[i]);
+            numberString = numberString + "| " + conversion + " ";
 
-        int nbGenerate3;
-        nbGenerate3 = (int) (Math.random() * 10);
-        System.out.println(nbGenerate3);
+            chiffreInconnuTableau[i] = "?";
+            chiffreInconnu = chiffreInconnu + "| " + chiffreInconnuTableau[i] + " ";
+        }
 
-        int nbGenerate4;
-        nbGenerate4 = (int) (Math.random() * 10);
-        System.out.println(nbGenerate4);
-
-        System.out.println();
         System.out.println("Le code est généré.");
-        System.out.println("Code à trouver = ????");
-        System.out.println("Code à trouver = " + nbGenerate1 + " | " + nbGenerate2 + " | " + nbGenerate3 + " | " + nbGenerate4);
+        System.out.println("Code à trouver = " + chiffreInconnu + "|");
+        //System.out.println("Code à trouver = " + numberString + "|"); // Verbose
         System.out.println();
+        //
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//Debut du mode de jeu
         boolean success = false;
 
         while (!success) {
 
-            System.out.println("Entrez une combinaisons de 4 chiffres.");
+            boolean corectValueForMenu = false;
 
-            Scanner sc = new Scanner(System.in);
+            int playerReponseTry = 0; // Initialisation de la variable qui stockera les inputs du joueur
 
-            int code = sc.nextInt();
+            String playerReponse = ""; // Initialisation de la variable qui convertira en String la variable des input du joueur pour pouvoir les affichers
 
-            int nb1 = (code % 10000) / 1000;
-            int nb2 = (code % 1000) / 100;
-            int nb3 = (code % 100) / 10;
-            int nb4 = (code % 10);
+            while (!corectValueForMenu) {
 
-            System.out.println(nb1 + " | " + nb2 + " | " + nb3 + " | " + nb4);
+                System.out.println("Entrez une combinaisons de " + resultatScanner + " chiffres.");
 
-            char reponseNumnb1;
-            char reponseNumnb2;
-            char reponseNumnb3;
-            char reponseNumnb4;
+                Scanner sc = new Scanner(System.in);
 
+                playerReponse = sc.nextLine();
 
-            if (nbGenerate1 < nb1) {
+                //Vérification de l'input du joueur. On s'assurre qu'il ne contient pas de caractere inadequat ou de chiffre negatif
+                //
 
-                reponseNumnb1 = '-';
+                String inputPlayer[] = new String[playerReponse.length()];
+                int inputPlayerInt[] = new int[playerReponse.length()];
 
-            } else if (nbGenerate1 == nb1) {
+                try {
+                    for (int i = 0; i < playerReponse.length(); i++) {
+                        inputPlayer[i] = Character.toString(playerReponse.charAt(i));
+                        inputPlayerInt[i] = Integer.parseInt(inputPlayer[i]);
+                    }
+                    corectValueForMenu = true;
+                } catch (NumberFormatException e) {
+                    System.out.println();
+                    System.out.println("Saisie incorrect.");
+                    System.out.println("Veuillez recommencer");
 
-                reponseNumnb1 = '=';
-
-            } else if (nbGenerate1 > nb1) {
-
-                reponseNumnb1 = '+';
-
-            } else {
-
-                reponseNumnb1 = '\u0000';
-
+                    //System.out.println("Code à trouver = " + chiffreInconnu + "|"); // Verbose
+                    //System.out.println("Code à trouver = " + numberString + "|"); // Verbose
+                    System.out.println();
+                }
             }
 
+            int numberOfChar = playerReponse.length();
 
-            if (nbGenerate2 < nb2) {
+            String playerResponseTableau[] = new String[resultatScanner];
 
-                reponseNumnb2 = '-';
+            String numberResponseString = "";
 
-            } else if (nbGenerate2 == nb2) {
+            if (numberOfChar == resultatScanner && playerReponseTry >= 0) {
 
-                reponseNumnb2 = '=';
+                int numberIntResponseTableau[] = new int[resultatScanner];
 
-            } else if (nbGenerate2 > nb2) {
+                for (int i = 0; i < playerResponseTableau.length; i++) {
+                    playerResponseTableau[i] = Character.toString(playerReponse.charAt(i));
+                    numberIntResponseTableau[i] = Integer.parseInt(playerResponseTableau[i]);
+                    //System.out.println("Tableau String = "+playerResponseTableau[i]); // Verbose
+                    // System.out.println("Tableau Int = "+numberIntResponseTableau[i]); // Verbose
+                    numberResponseString = numberResponseString + "| " + playerResponseTableau[i] + " ";
 
-                reponseNumnb2 = '+';
+                }
+                //
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+                //Comparaison entre la réponse et l'input du joueur et affichage
+                //
+                String resultat[] = new String[resultatScanner];
+                String resultatEnString = "";
+
+                for (int i = 0; i < playerResponseTableau.length; i++) {
+                    if (numberToFind[i] > numberIntResponseTableau[i]) {
+                        resultat[i] = "+";
+                    } else if (numberToFind[i] < numberIntResponseTableau[i]) {
+                        resultat[i] = "-";
+                    } else if (numberToFind[i] == numberIntResponseTableau[i]) {
+                        resultat[i] = "=";
+                        chiffreInconnuTableau[i] = Integer.toString(numberIntResponseTableau[i]);
+                        nbTrouver = nbTrouver + 1;
+                        //System.out.println("Case "+i+" = "+chiffreInconnuTableau[i]); // Verbose
+                    } else {
+                        System.out.println("Error");
+                    }
+
+                    resultatEnString = resultatEnString + "| " + resultat[i] + " ";
+
+                }
+
+                //System.out.println("OK = "+nbTrouver+"/"+resultatScanner); //ne fonctionne pas
+                {
+                    for (int i = 0; i < playerResponseTableau.length; i++) {
+                        System.out.print("| " + chiffreInconnuTableau[i] + " ");
+                    }
+                    System.out.print("|");
+                    System.out.println();
+                }
+
+                //System.out.println(chiffreInconnu + "|"); // Verbose
+                //System.out.println(numberString + "|"); // Verbose
+                System.out.println(numberResponseString + "|");
+                System.out.println(resultatEnString + "|");
+                //
+                //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                //Verification pour savoir si la partie est terminé
+                //
+                int winCondition = 0;
+
+                for (int i = 0; i < playerResponseTableau.length; i++) {
+                    if (resultat[i] == "=") {
+                        winCondition = winCondition + 1;
+                    }
+                }
+
+                if (winCondition == resultatScanner) {
+                    success = true;
+                }
+                //
+                ////////////////////////////////////////////////////////////////////////////////////////////////////
             } else {
-
-                reponseNumnb2 = '\u0000';
-
-            }
-
-
-            if (nbGenerate3 < nb3) {
-
-                reponseNumnb3 = '-';
-
-            } else if (nbGenerate3 == nb3) {
-
-                reponseNumnb3 = '=';
-
-            } else if (nbGenerate3 > nb3) {
-
-                reponseNumnb3 = '+';
-
-            } else {
-
-                reponseNumnb3 = '\u0000';
-
-            }
-
-
-            if (nbGenerate4 < nb4) {
-
-                reponseNumnb4 = '-';
-
-            } else if (nbGenerate4 == nb4) {
-
-                reponseNumnb4 = '=';
-
-            } else if (nbGenerate4 > nb4) {
-
-                reponseNumnb4 = '+';
-
-            } else {
-
-                reponseNumnb4 = '\u0000';
-
-            }
-
-
-            if (reponseNumnb1 == '\u0000' || reponseNumnb2 == '\u0000' || reponseNumnb3 == '\u0000' || reponseNumnb4 == '\u0000') {
-
-                System.out.println("Error");
-
-            } else if (reponseNumnb1 == '=' && reponseNumnb2 == '=' && reponseNumnb3 == '=' && reponseNumnb4 == '=') {
-
-                System.out.println(reponseNumnb1 + " | " + reponseNumnb2 + " | " + reponseNumnb3 + " | " + reponseNumnb4);
-
-                success = true;
-
-            } else {
-
-                System.out.println(reponseNumnb1 + " | " + reponseNumnb2 + " | " + reponseNumnb3 + " | " + reponseNumnb4);
-
+                System.out.println();
+                System.out.println("Saisie incorrect.");
+                System.out.println("Veuillez recommencer");
+                //System.out.println("Code à trouver = " + chiffreInconnu + "|");
+                //System.out.println("Code à trouver = " + numberString + "|"); // Verbose
+                System.out.println();
             }
         }
-
         System.out.println("GG WP !!");
         System.out.println();
         Menu menu = new Menu();
         menu.endGameMenu();
-
     }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
