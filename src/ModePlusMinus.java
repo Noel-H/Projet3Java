@@ -138,7 +138,7 @@ public class ModePlusMinus {
                 int winCondition = 0;
 
                 for (int i = 0; i < playerResponseTableau.length; i++) {
-                    if (resultat[i] == "=") {
+                    if (resultat[i].equals("=")) {
                         winCondition = winCondition + 1;
                     }
                 }
@@ -162,5 +162,80 @@ public class ModePlusMinus {
         Menu menu = new Menu();
         menu.endGameMenu();
     }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    void runGamePlusMinusModeOrdi() {
+
+        String playerReponse = "";
+
+        boolean corectValueForMenu = false;
+
+        while (!corectValueForMenu) {
+
+            System.out.println("Entrer une combinaisons de chiffre que l'ordinateur devra trouver.");
+
+            Scanner sc = new Scanner(System.in);
+
+            playerReponse = sc.nextLine();
+
+
+            String playerReponseTableau[] = new String[playerReponse.length()];
+            int playerReponseTableauInt[] = new int[playerReponse.length()];
+
+            try {
+                for (int i = 0; i < playerReponse.length(); i++) {
+                    playerReponseTableau[i] = Character.toString(playerReponse.charAt(i));
+                    playerReponseTableauInt[i] = Integer.parseInt(playerReponseTableau[i]);
+                }
+                corectValueForMenu = true;
+            } catch (NumberFormatException e) {
+                System.out.println();
+                System.out.println("Saisie incorrect.");
+                System.out.println("Veuillez recommencer");
+                System.out.println();
+            }
+
+
+        }
+
+        String playerReponseTableau2[] = new String[playerReponse.length()];
+        int playerReponseTableauInt2[] = new int[playerReponse.length()];
+        int winCondition = 0;
+        int nbTry = 0;
+
+        for (int i = 0; i < playerReponse.length(); i++) {
+            playerReponseTableau2[i] = Character.toString(playerReponse.charAt(i));
+            playerReponseTableauInt2[i] = Integer.parseInt(playerReponseTableau2[i]);
+        }
+
+        System.out.println();
+        System.out.println("C'est parti !");
+        System.out.println();
+
+        int ordiReponse[] = new int[playerReponse.length()];
+        String resultat[] = new String[playerReponse.length()];
+
+nbTry=nbTry+1;
+
+        System.out.println("Essai numéro : "+nbTry);
+        for (int i = 0; i < playerReponse.length(); i++) {
+            ordiReponse[i] = 5;
+            System.out.print(ordiReponse[i]);
+        }
+        System.out.println();
+
+        for (int i = 0; i < playerReponse.length(); i++){
+            if (ordiReponse[i]==playerReponseTableauInt2[i]){
+                System.out.print("=");
+            } else if (ordiReponse[i]>playerReponseTableauInt2[i]){
+                System.out.print("-");
+            } else{
+                System.out.print("+");
+            }
+        }
+
+
+    }
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
