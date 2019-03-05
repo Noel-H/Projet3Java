@@ -242,29 +242,37 @@ public class ModePlusMinus {
 
                 System.out.println("Essai numéro : " + nbTry);
 
-                for (int i = 0; i < playerReponse.length(); i++) {
-                    System.out.print(ordiReponse[i]);
+                for (int i=0 ; i < playerReponse.length() ; i++){
+                    System.out.print("| "+playerReponseTableauInt2[i]+" ");
                 }
+                System.out.print("|");
+                System.out.println();
+
+                for (int i = 0; i < playerReponse.length(); i++) {
+                    System.out.print("| "+ordiReponse[i]+" ");
+                }
+                System.out.print("|");
                 System.out.println();
 
 
                 for (int i = 0; i < playerReponse.length(); i++) {
                     if (ordiReponse[i] == playerReponseTableauInt2[i]) {
                         resultat[i] = "=";
-                        System.out.print(resultat[i]);
+                        System.out.print("| "+resultat[i]+" ");
                         winCondition = winCondition + 1;
                     } else if (ordiReponse[i] > playerReponseTableauInt2[i]) {
                         resultat[i] = "-";
-                        System.out.print(resultat[i]);
+                        System.out.print("| "+resultat[i]+" ");
 //                System.out.println("ordiReponse i = "+ordiReponseModif[i]);
                         ordiReponseModif[i] = ordiReponse[i] - 1;
 //                System.out.println("ordiReponse i = "+ordiReponseModif[i]);
                     } else {
                         resultat[i] = "+";
-                        System.out.print(resultat[i]);
+                        System.out.print("| "+resultat[i]+" ");
                         ordiReponseModif[i] = ordiReponse[i] + 1;
                     }
                 }
+                System.out.print("|");
                 System.out.println();
 //        for ( int i=0; i < playerReponse.length(); i++){
 //            System.out.print(ordiReponseModif[i]);
