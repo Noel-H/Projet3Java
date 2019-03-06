@@ -4,7 +4,7 @@ public class Menu {
 
     void principalMenu() {
 
-        boolean again=false;
+        boolean again = false;
 
         while (!again) {
 
@@ -84,103 +84,103 @@ public class Menu {
 
     void modeDeJeuMenu() {
 
-        boolean again=false;
+        boolean again = false;
 
         while (!again) {
 
-        boolean selectedMenu = false;
+            boolean selectedMenu = false;
 
-        while (!selectedMenu) {
+            while (!selectedMenu) {
 
-            boolean corectValueForMenu = false;
+                boolean corectValueForMenu = false;
 
-            int numberSelectionChoiceMenu = 0;
+                int numberSelectionChoiceMenu = 0;
 
-            while (!corectValueForMenu) {
-
-                System.out.println();
-                System.out.println("Entrez le numéro correspondant au mode de jeu voulu.");
-                System.out.println("1 - Joueur solo");
-                System.out.println("2 - Ordi solo");
-                System.out.println("3 - Joueur vs Ordi");
-                System.out.println("4 - Retour");
-                System.out.println("5 - Quitter");
-
-                Scanner sc = new Scanner(System.in);
-                String selectionChoiceMenu = sc.nextLine();
-
-
-                try {
-
-                    numberSelectionChoiceMenu = Integer.parseInt(selectionChoiceMenu);
-
-                    corectValueForMenu = true;
-
-                } catch (NumberFormatException e) {
+                while (!corectValueForMenu) {
 
                     System.out.println();
-                    System.out.println("Saisie incorrect.");
-                    System.out.println("Veuillez recommencer");
-                    System.out.println();
+                    System.out.println("Entrez le numéro correspondant au mode de jeu voulu.");
+                    System.out.println("1 - Joueur solo");
+                    System.out.println("2 - Ordi solo");
+                    System.out.println("3 - Joueur vs Ordi");
+                    System.out.println("4 - Retour");
+                    System.out.println("5 - Quitter");
 
+                    Scanner sc = new Scanner(System.in);
+                    String selectionChoiceMenu = sc.nextLine();
+
+
+                    try {
+
+                        numberSelectionChoiceMenu = Integer.parseInt(selectionChoiceMenu);
+
+                        corectValueForMenu = true;
+
+                    } catch (NumberFormatException e) {
+
+                        System.out.println();
+                        System.out.println("Saisie incorrect.");
+                        System.out.println("Veuillez recommencer");
+                        System.out.println();
+
+                    }
                 }
-            }
 
 
-            switch (numberSelectionChoiceMenu) {
-                case 1:
+                switch (numberSelectionChoiceMenu) {
+                    case 1:
 
-                    ModePlusMinus modePlusMinus = new ModePlusMinus();
-                    modePlusMinus.runGamePlusMinus();
+                        ModePlusMinus modePlusMinus = new ModePlusMinus();
+                        modePlusMinus.runGamePlusMinus();
 
-                    selectedMenu = true;
+                        selectedMenu = true;
 
-                    break;
+                        break;
 
-                case 2:
+                    case 2:
 
-                    ModePlusMinus modePlusMinus1 = new ModePlusMinus();
-                    modePlusMinus1.runGamePlusMinusModeOrdi();
+                        ModePlusMinus modePlusMinus1 = new ModePlusMinus();
+                        modePlusMinus1.runGamePlusMinusModeOrdi();
 
-                    selectedMenu = true;
+                        selectedMenu = true;
 
-                    break;
+                        break;
 
-                case 3:
+                    case 3:
 
-                    System.out.println();
-                    System.out.println("Choix indisponible pour le moment.");
-                    System.out.println();
+                        System.out.println();
+                        System.out.println("Choix indisponible pour le moment.");
+                        System.out.println();
 
-                    break;
+                        break;
 
-                case 4:
+                    case 4:
 
-                    again=true;
-                    selectedMenu = true;
+                        again = true;
+                        selectedMenu = true;
 
-                    break;
+                        break;
 
-                case 5:
+                    case 5:
 
-                    System.out.println();
-                    System.out.println("Bye bye.");
-                    System.out.println();
+                        System.out.println();
+                        System.out.println("Bye bye.");
+                        System.out.println();
 
-                    System.exit(0);
+                        System.exit(0);
 
 //                    selectedMenu = true;
 
-                    break;
+                        break;
 
-                default:
+                    default:
 
-                    System.out.println();
-                    System.out.println("Saisie incorrect.");
-                    System.out.println("Veuillez recommencer");
-                    System.out.println();
+                        System.out.println();
+                        System.out.println("Saisie incorrect.");
+                        System.out.println("Veuillez recommencer");
+                        System.out.println();
 
-            }
+                }
             }
         }
     }
@@ -230,7 +230,7 @@ public class Menu {
                     case 1:
 
                         selectedMenu = true;
-                        again=true;
+                        again = true;
 
                         break;
 
