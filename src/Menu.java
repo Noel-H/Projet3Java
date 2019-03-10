@@ -150,9 +150,11 @@ public class Menu {
 
                     case 3:
 
-                        System.out.println();
-                        System.out.println("Choix indisponible pour le moment.");
-                        System.out.println();
+                        ModePlusMinus modePlusMinus2 = new ModePlusMinus();
+                        modePlusMinus2.runGameVersusMode();
+
+                        selectedMenu = true;
+                        again=true;
 
                         break;
 
