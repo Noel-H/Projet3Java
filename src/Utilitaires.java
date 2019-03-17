@@ -19,43 +19,22 @@ public class Utilitaires {
 
         String comparedNumber = "";
 
-            String operator;
+        String operator;
 
-            for (int i = 0; i < numberToCompare2.length(); i++) {
-                if (Integer.parseInt(Character.toString(numberToCompare1.charAt(i))) < Integer.parseInt(Character.toString(numberToCompare2.charAt(i)))) {
-                    operator = "+";
-                } else if (Integer.parseInt(Character.toString(numberToCompare1.charAt(i))) > Integer.parseInt(Character.toString(numberToCompare2.charAt(i)))) {
-                    operator = "-";
-                } else {
-                    operator = "=";
-                }
-
-                comparedNumber = comparedNumber + operator;
-
+        for (int i = 0; i < numberToCompare2.length(); i++) {
+            if (Integer.parseInt(Character.toString(numberToCompare1.charAt(i))) < Integer.parseInt(Character.toString(numberToCompare2.charAt(i)))) {
+                operator = "+";
+            } else if (Integer.parseInt(Character.toString(numberToCompare1.charAt(i))) > Integer.parseInt(Character.toString(numberToCompare2.charAt(i)))) {
+                operator = "-";
+            } else {
+                operator = "=";
             }
 
-            return comparedNumber;
+            comparedNumber = comparedNumber + operator;
 
-    }
+        }
 
-    static String unknownNumber(String numberToCompare1, String numberToCompare2) {
-
-        String comparedNumber = "";
-
-            String operator;
-
-            for (int i = 0; i < numberToCompare2.length(); i++) {
-                if (Integer.parseInt(Character.toString(numberToCompare1.charAt(i))) == Integer.parseInt(Character.toString(numberToCompare2.charAt(i)))) {
-                    operator = Character.toString(numberToCompare2.charAt(i));
-                } else {
-                    operator = "?";
-                }
-
-                comparedNumber = comparedNumber + operator;
-
-            }
-
-            return comparedNumber;
+        return comparedNumber;
 
     }
 
@@ -96,17 +75,57 @@ public class Utilitaires {
         }
     }
 
-    static boolean winCondition(String codeToValidate){
-        int winPoint=0;
+    static boolean winCondition(String codeToValidate) {
+        int winPoint = 0;
         for (int i = 0; i < codeToValidate.length(); i++) {
-            if (Character.toString(codeToValidate.charAt(i)).equals("=")){
-                winPoint=winPoint+1;
+            if (Character.toString(codeToValidate.charAt(i)).equals("=")) {
+                winPoint = winPoint + 1;
             }
         }
-        if (winPoint==codeToValidate.length()){
+        if (winPoint == codeToValidate.length()) {
             return true;
-        } else{
+        } else {
             return false;
         }
     }
+
+    static String rechercheDichotomique(String code, String previousCode, String indice) {
+
+        String newCode = "";
+
+        int idD;
+        int idF;
+        int idM;
+        int idV;
+
+        for (int i = 0; i < code.length(); i++) {
+            if (Character.toString(indice.charAt(i)).equals("=")) {
+                int a = (Integer.parseInt(Character.toString(code.charAt(i))));
+                newCode = newCode + (a);
+            } else if (Character.toString(indice.charAt(i)).equals("+")) {
+
+                idD=(Integer.parseInt(Character.toString(previousCode.charAt(i))));
+                idF=9;
+                idM=;
+                idV=(Integer.parseInt(Character.toString(code.charAt(i))));
+
+                int idC=(idM+idV)/2;
+
+                newCode = newCode + (idC);
+            } else if ((Character.toString(indice.charAt(i)).equals("-"))) {
+
+                idD=0;
+                idF=9;
+                idM=(Integer.parseInt(Character.toString(previousCode.charAt(i))));
+                idV=(Integer.parseInt(Character.toString(code.charAt(i))));
+
+
+                newCode = newCode + (idV);
+            }
+
+        }
+
+        return newCode;
+    }
+
 }
