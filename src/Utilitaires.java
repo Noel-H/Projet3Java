@@ -15,6 +15,21 @@ public class Utilitaires {
         return generatedNumber;
     }
 
+    static String number4Generator(int quantityToGenerate) {
+
+        String generatedNumber = "";
+        String numberGenerate[] = new String[quantityToGenerate];
+
+        for (int i = 0; i < quantityToGenerate; i++) {
+
+            numberGenerate[i] = Integer.toString(5);
+            generatedNumber = generatedNumber + numberGenerate[i];
+        }
+
+
+        return generatedNumber;
+    }
+
     static String numberComparator(String numberToCompare1, String numberToCompare2) {
 
         String comparedNumber = "";
@@ -89,14 +104,13 @@ public class Utilitaires {
         }
     }
 
-    static String rechercheDichotomique(String code, String previousCode, String indice) {
+    static String rechercheDichotomique(String code, String indice) {
 
         String newCode = "";
 
         int idD;
         int idF;
         int idM;
-        int idV;
 
         for (int i = 0; i < code.length(); i++) {
             if (Character.toString(indice.charAt(i)).equals("=")) {
@@ -104,28 +118,24 @@ public class Utilitaires {
                 newCode = newCode + (a);
             } else if (Character.toString(indice.charAt(i)).equals("+")) {
 
-                idD=(Integer.parseInt(Character.toString(previousCode.charAt(i))));
-                idF=9;
-                idM=;
-                idV=(Integer.parseInt(Character.toString(code.charAt(i))));
+                idD = (Integer.parseInt(Character.toString(code.charAt(i))));
+                idF = 9;
+                idM = (idD + idF) / 2;
 
-                int idC=(idM+idV)/2;
-
-                newCode = newCode + (idC);
+                newCode = newCode + (idM);
             } else if ((Character.toString(indice.charAt(i)).equals("-"))) {
 
-                idD=0;
-                idF=9;
-                idM=(Integer.parseInt(Character.toString(previousCode.charAt(i))));
-                idV=(Integer.parseInt(Character.toString(code.charAt(i))));
+                idD = 0;
+                idF = (Integer.parseInt(Character.toString(code.charAt(i))));
+                idM = (idD + idF) / 2;
 
-
-                newCode = newCode + (idV);
+                newCode = newCode + (idM);
             }
 
         }
 
         return newCode;
     }
+
 
 }
