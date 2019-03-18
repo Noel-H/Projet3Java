@@ -15,21 +15,6 @@ public class Utilitaires {
         return generatedNumber;
     }
 
-    static String number4Generator(int quantityToGenerate) {
-
-        String generatedNumber = "";
-        String numberGenerate[] = new String[quantityToGenerate];
-
-        for (int i = 0; i < quantityToGenerate; i++) {
-
-            numberGenerate[i] = Integer.toString(5);
-            generatedNumber = generatedNumber + numberGenerate[i];
-        }
-
-
-        return generatedNumber;
-    }
-
     static String numberComparator(String numberToCompare1, String numberToCompare2) {
 
         String comparedNumber = "";
@@ -104,38 +89,31 @@ public class Utilitaires {
         }
     }
 
-    static String rechercheDichotomique(String code, String indice) {
+    static String rechercheDichotomique(int[][] DFM, int a) {
 
-        String newCode = "";
-
-        int idD;
-        int idF;
-        int idM;
-
-        for (int i = 0; i < code.length(); i++) {
-            if (Character.toString(indice.charAt(i)).equals("=")) {
-                int a = (Integer.parseInt(Character.toString(code.charAt(i))));
-                newCode = newCode + (a);
-            } else if (Character.toString(indice.charAt(i)).equals("+")) {
-
-                idD = (Integer.parseInt(Character.toString(code.charAt(i))));
-                idF = 9;
-                idM = (idD + idF) / 2;
-
-                newCode = newCode + (idM);
-            } else if ((Character.toString(indice.charAt(i)).equals("-"))) {
-
-                idD = 0;
-                idF = (Integer.parseInt(Character.toString(code.charAt(i))));
-                idM = (idD + idF) / 2;
-
-                newCode = newCode + (idM);
-            }
-
+        String rCode = "";
+        for (int i = 0; i < a; i++) {
+            rCode = rCode + DFM[i][2];
         }
-
-        return newCode;
+        return rCode;
     }
 
+    static String rechercheDichotomique(int[][] DFM, String lastIndice, String testCode) {
 
+        for (int i = 0; i < lastIndice.length(); i++) {
+            if (Character.toString(lastIndice.charAt(i)).equals("+")) {
+                DFM[i][0] = (Integer.parseInt(Character.toString(testCode.charAt(i))));
+                DFM[i][2] = (DFM[i][0] + DFM[i][1]) / 2;
+            } else if (Character.toString(lastIndice.charAt(i)).equals("-")) {
+                DFM[i][1] = (Integer.parseInt(Character.toString(testCode.charAt(i))));
+                DFM[i][2] = (DFM[i][0] + DFM[i][1]) / 2;
+            }
+        }
+
+        String rCode = "";
+        for (int i = 0; i < lastIndice.length(); i++) {
+            rCode = rCode + DFM[i][2];
+        }
+        return rCode;
+    }
 }
