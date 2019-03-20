@@ -25,7 +25,7 @@ public class ModeRechercheDefenseur {
             }
         }
 
-        int DFM[][] = new int[secretCode.length()][4];
+        int DFM[][] = new int[secretCode.length()][3];
         for (int i = 0; i < secretCode.length(); i++) {
             DFM[i][0] = 0;
             DFM[i][1] = 10;
@@ -51,5 +51,7 @@ public class ModeRechercheDefenseur {
                 winConditionOk = true;
             }
         }
+
+        MenuFinDePartie.enGameMenu();
     }
 }
