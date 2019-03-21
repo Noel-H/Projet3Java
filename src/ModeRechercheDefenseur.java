@@ -4,54 +4,55 @@ public class ModeRechercheDefenseur {
 
     static void game() {
 
-        String secretCode = "";
-        String testCode = "";
-        String lastIndice = "";
+        do {
 
-        boolean correctFormatValue = false;
+            String secretCode = "";
+            String testCode = "";
+            String lastIndice = "";
 
-        while (!correctFormatValue) {
+            boolean correctFormatValue = false;
 
-            System.out.println("Entrez une combinaisons de chiffre.");
+            while (!correctFormatValue) {
 
-            Scanner sc = new Scanner(System.in);
+                System.out.println("Entrez une combinaisons de chiffre.");
 
-            secretCode = sc.nextLine();
+                Scanner sc = new Scanner(System.in);
 
-            if (!Utilitaires.tryCatchMethod(secretCode, secretCode.length())) {
-                System.out.println("Saisie incorrect.");
-            } else {
-                correctFormatValue = true;
-            }
-        }
+                secretCode = sc.nextLine();
 
-        int DFM[][] = new int[secretCode.length()][3];
-        for (int i = 0; i < secretCode.length(); i++) {
-            DFM[i][0] = 0;
-            DFM[i][1] = 10;
-            DFM[i][2] = (DFM[i][0] + DFM[i][1]) / 2;
-        }
-
-        boolean winConditionOk = false;
-
-        while (!winConditionOk) {
-
-            if (lastIndice.equals("")) {
-                testCode = Utilitaires.rechercheDichotomique(DFM, secretCode.length());
-            } else {
-                testCode = Utilitaires.rechercheDichotomique(DFM, lastIndice, testCode);
+                if (!Utilitaires.tryCatchMethod(secretCode, secretCode.length())) {
+                    System.out.println("Saisie incorrect.");
+                } else {
+                    correctFormatValue = true;
+                }
             }
 
-            lastIndice = Utilitaires.numberComparator(testCode, secretCode);
-            System.out.println(Utilitaires.styleFormat1(testCode));
-            System.out.println(Utilitaires.styleFormat1(lastIndice));
-
-            if (Utilitaires.winCondition(lastIndice)) {
-                System.out.println("GG WP !!");
-                winConditionOk = true;
+            int DFM[][] = new int[secretCode.length()][3];
+            for (int i = 0; i < secretCode.length(); i++) {
+                DFM[i][0] = 0;
+                DFM[i][1] = 10;
+                DFM[i][2] = (DFM[i][0] + DFM[i][1]) / 2;
             }
-        }
 
-        MenuFinDePartie.enGameMenu();
+            boolean winConditionOk = false;
+
+            while (!winConditionOk) {
+
+                if (lastIndice.equals("")) {
+                    testCode = Utilitaires.rechercheDichotomique(DFM, secretCode.length());
+                } else {
+                    testCode = Utilitaires.rechercheDichotomique(DFM, lastIndice, testCode);
+                }
+
+                lastIndice = Utilitaires.numberComparator(testCode, secretCode);
+                System.out.println(Utilitaires.styleFormat1(testCode));
+                System.out.println(Utilitaires.styleFormat1(lastIndice));
+
+                if (Utilitaires.winCondition(lastIndice)) {
+                    System.out.println("GG WP !!");
+                    winConditionOk = true;
+                }
+            }
+        } while (!MenuFinDePartie.enGameMenu());
     }
 }

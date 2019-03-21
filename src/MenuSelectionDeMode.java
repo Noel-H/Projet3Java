@@ -53,7 +53,7 @@ public class MenuSelectionDeMode {
                         ModeRechercheChallenger.game();
 
                         selectedMenu = true;
-                        again=true;
+                        again = true;
 
                         break;
 
@@ -62,7 +62,7 @@ public class MenuSelectionDeMode {
                         ModeRechercheDefenseur.game();
 
                         selectedMenu = true;
-                        again=true;
+                        again = true;
 
                         break;
 
@@ -71,7 +71,7 @@ public class MenuSelectionDeMode {
                         ModeRechercheDuel.game();
 
                         selectedMenu = true;
-                        again=true;
+                        again = true;
 
                         break;
 

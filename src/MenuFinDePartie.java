@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class MenuFinDePartie {
 
-    static void enGameMenu() {
+    static boolean enGameMenu() {
+
+        boolean b = false;
 
         boolean again01 = false;
 
@@ -56,9 +58,11 @@ public class MenuFinDePartie {
                         System.out.println();
                         System.out.println("Retour au Menu principal");
                         System.out.println();
+
+                        b = true;
                         selectedMenu = true;
                         again01 = true;
-//                        again = true;
+////                        again = true;
 
                         break;
 
@@ -81,5 +85,6 @@ public class MenuFinDePartie {
                 }
             }
         }
+        return b;
     }
 }

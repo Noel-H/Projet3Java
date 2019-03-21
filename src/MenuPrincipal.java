@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MenuPrincipal {
 
-   static void principalMenu() {
+    static void principalMenu() {
 
         boolean again = false;
 

@@ -4,45 +4,48 @@ public class ModeRechercheChallenger {
 
     static void game() {
 
-        int nombreDeChiffreATrouver = 4;
+        do {
 
-        System.out.println("Chiffre dans le code secret = " + nombreDeChiffreATrouver);
+            int nombreDeChiffreATrouver = 4;
 
-        String secretCode = Utilitaires.randomNumberGenerator(nombreDeChiffreATrouver);
-        System.out.println("Le code secret est généré.");
+            System.out.println("Chiffre dans le code secret = " + nombreDeChiffreATrouver);
 
-        String playerReponse = "";
+            String secretCode = Utilitaires.randomNumberGenerator(nombreDeChiffreATrouver);
+            System.out.println("Le code secret est généré.");
 
-        boolean winConditionOk = false;
+            String playerReponse = "";
 
-        while (!winConditionOk) {
+            boolean winConditionOk = false;
 
-            boolean correctFormatValue = false;
+            while (!winConditionOk) {
 
-            while (!correctFormatValue) {
+                boolean correctFormatValue = false;
 
-                System.out.println("Entrez une combinaisons de " + nombreDeChiffreATrouver + " chiffres.");
+                while (!correctFormatValue) {
 
-                Scanner sc = new Scanner(System.in);
+                    System.out.println("Entrez une combinaisons de " + nombreDeChiffreATrouver + " chiffres.");
 
-                playerReponse = sc.nextLine();
+                    Scanner sc = new Scanner(System.in);
 
-                if (!Utilitaires.tryCatchMethod(playerReponse, nombreDeChiffreATrouver)) {
-                    System.out.println("Saisie incorrect.");
-                } else {
-                    correctFormatValue = true;
+                    playerReponse = sc.nextLine();
+
+                    if (!Utilitaires.tryCatchMethod(playerReponse, nombreDeChiffreATrouver)) {
+                        System.out.println("Saisie incorrect.");
+                    } else {
+                        correctFormatValue = true;
+                    }
+                }
+
+                String resultatEnOperator = Utilitaires.numberComparator(playerReponse, secretCode);
+
+                System.out.println(Utilitaires.styleFormat1(playerReponse));
+                System.out.println(Utilitaires.styleFormat1(resultatEnOperator));
+
+                if (Utilitaires.winCondition(resultatEnOperator)) {
+                    System.out.println("GG WP !!");
+                    winConditionOk = true;
                 }
             }
-
-            String resultatEnOperator = Utilitaires.numberComparator(playerReponse, secretCode);
-
-            System.out.println(Utilitaires.styleFormat1(playerReponse));
-            System.out.println(Utilitaires.styleFormat1(resultatEnOperator));
-
-            if (Utilitaires.winCondition(resultatEnOperator)) {
-                System.out.println("GG WP !!");
-                winConditionOk = true;
-            }
-        }
+        } while (!MenuFinDePartie.enGameMenu());
     }
 }
