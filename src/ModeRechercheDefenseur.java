@@ -7,6 +7,7 @@ public class ModeRechercheDefenseur {
         do {
 
             int nbTour=0;
+            int loseCondition=6;
 
             String secretCode = "";
             String testCode = "";
@@ -41,7 +42,7 @@ public class ModeRechercheDefenseur {
             while (!winConditionOk) {
 
                 nbTour++;
-                System.out.println("Tour n°"+nbTour+".");
+                System.out.println("Tour n°"+nbTour+" sur "+loseCondition);
 
                 if (lastIndice.equals("")) {
                     testCode = Utilitaires.rechercheDichotomique(DFM, secretCode.length());
@@ -54,7 +55,11 @@ public class ModeRechercheDefenseur {
                 System.out.println(Utilitaires.styleFormat1(lastIndice));
 
                 if (Utilitaires.winCondition(lastIndice)) {
-                    System.out.println("GG WP !!");
+                    System.out.println("L'ordinateur a gagné. GG WP !!");
+                    winConditionOk = true;
+                }else if (loseCondition==nbTour){
+                    System.out.println("L'ordinateur a perdu.");
+                    System.out.println("Solution = "+Utilitaires.styleFormat1(secretCode));
                     winConditionOk = true;
                 }
             }

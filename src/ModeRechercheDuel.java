@@ -7,6 +7,7 @@ public class ModeRechercheDuel {
         do {
 
             int nbTour=0;
+            int loseCondition=6;
 
             String secretPlayerCode = "";
 
@@ -47,7 +48,7 @@ public class ModeRechercheDuel {
             while (!winConditionOk) {
 
                 nbTour++;
-                System.out.println("Tour n°"+nbTour+".");
+                System.out.println("Tour n°"+nbTour+" sur "+loseCondition);
 
                 boolean correctFormatValue2 = false;
 
@@ -87,6 +88,12 @@ public class ModeRechercheDuel {
                     winConditionOk = true;
                 } else if (Utilitaires.winCondition(resultatOrdiEnOperator)) {
                     System.out.println("Vous avez perdu.");
+                    System.out.println("Le joueur devait trouver : "+Utilitaires.styleFormat1(secretOrdiCode));
+                    winConditionOk = true;
+                }else if (loseCondition==nbTour){
+                    System.out.println("Vous avez Perdu.");
+                    System.out.println("Le joueur devait trouver : "+Utilitaires.styleFormat1(secretOrdiCode));
+                    System.out.println("L'ordinateur devait trouver : "+Utilitaires.styleFormat1(secretPlayerCode));
                     winConditionOk = true;
                 }
             }

@@ -8,6 +8,7 @@ public class ModeRechercheChallenger {
 
             int nombreDeChiffreATrouver = 4;
             int nbTour=0;
+            int loseCondition=6;
 
             System.out.println("Chiffre dans le code secret = " + nombreDeChiffreATrouver);
 
@@ -21,7 +22,7 @@ public class ModeRechercheChallenger {
             while (!winConditionOk) {
 
                 nbTour++;
-                System.out.println("Tour n°"+nbTour+".");
+                System.out.println("Tour n°"+nbTour+" sur "+loseCondition);
 
                 boolean correctFormatValue = false;
 
@@ -47,6 +48,10 @@ public class ModeRechercheChallenger {
 
                 if (Utilitaires.winCondition(resultatEnOperator)) {
                     System.out.println("GG WP !!");
+                    winConditionOk = true;
+                } else if (loseCondition==nbTour){
+                    System.out.println("Vous avez Perdu.");
+                    System.out.println("Solution = "+Utilitaires.styleFormat1(secretCode));
                     winConditionOk = true;
                 }
             }
