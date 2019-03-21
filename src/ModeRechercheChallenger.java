@@ -7,6 +7,7 @@ public class ModeRechercheChallenger {
         do {
 
             int nombreDeChiffreATrouver = 4;
+            int nbTour=0;
 
             System.out.println("Chiffre dans le code secret = " + nombreDeChiffreATrouver);
 
@@ -18,6 +19,9 @@ public class ModeRechercheChallenger {
             boolean winConditionOk = false;
 
             while (!winConditionOk) {
+
+                nbTour++;
+                System.out.println("Tour n°"+nbTour+".");
 
                 boolean correctFormatValue = false;
 

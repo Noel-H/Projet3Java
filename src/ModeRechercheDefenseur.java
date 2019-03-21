@@ -6,6 +6,8 @@ public class ModeRechercheDefenseur {
 
         do {
 
+            int nbTour=0;
+
             String secretCode = "";
             String testCode = "";
             String lastIndice = "";
@@ -37,6 +39,9 @@ public class ModeRechercheDefenseur {
             boolean winConditionOk = false;
 
             while (!winConditionOk) {
+
+                nbTour++;
+                System.out.println("Tour n°"+nbTour+".");
 
                 if (lastIndice.equals("")) {
                     testCode = Utilitaires.rechercheDichotomique(DFM, secretCode.length());

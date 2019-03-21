@@ -6,6 +6,8 @@ public class ModeRechercheDuel {
 
         do {
 
+            int nbTour=0;
+
             String secretPlayerCode = "";
 
             String resultatOrdiEnOperator = "";
@@ -43,6 +45,9 @@ public class ModeRechercheDuel {
             boolean winConditionOk = false;
 
             while (!winConditionOk) {
+
+                nbTour++;
+                System.out.println("Tour n°"+nbTour+".");
 
                 boolean correctFormatValue2 = false;
 
