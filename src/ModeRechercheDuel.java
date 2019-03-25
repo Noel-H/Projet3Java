@@ -37,11 +37,6 @@ public class ModeRechercheDuel {
             String playerReponse = "";
 
             int DFM[][] = new int[secretPlayerCode.length()][3];
-            for (int i = 0; i < secretPlayerCode.length(); i++) {
-                DFM[i][0] = 0;
-                DFM[i][1] = 10;
-                DFM[i][2] = (DFM[i][0] + DFM[i][1]) / 2;
-            }
 
             boolean winConditionOk = false;
 

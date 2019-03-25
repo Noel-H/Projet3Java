@@ -20,9 +20,9 @@ public class MenuSelectionDeMode {
 
                     System.out.println();
                     System.out.println("Entrez le numéro correspondant au mode de jeu voulu.");
-                    System.out.println("1 - Joueur solo");
-                    System.out.println("2 - Ordi solo");
-                    System.out.println("3 - Joueur vs Ordi");
+                    System.out.println("1 - Challenger");
+                    System.out.println("2 - Defenseur");
+                    System.out.println("3 - Duel");
                     System.out.println("4 - Retour");
                     System.out.println("5 - Quitter");
 

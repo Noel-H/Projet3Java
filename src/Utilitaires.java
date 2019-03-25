@@ -3,14 +3,10 @@ public class Utilitaires {
     static String randomNumberGenerator(int quantityToGenerate) {
 
         String generatedNumber = "";
-        String numberGenerate[] = new String[quantityToGenerate];
 
         for (int i = 0; i < quantityToGenerate; i++) {
-
-            numberGenerate[i] = Integer.toString((int) (Math.random() * 10));
-            generatedNumber = generatedNumber + numberGenerate[i];
+            generatedNumber=generatedNumber+((int) (Math.random() * 10));
         }
-
 
         return generatedNumber;
     }
@@ -41,7 +37,6 @@ public class Utilitaires {
     static String styleFormat1(String stringToFormat) {
 
         String formatedString = "";
-
 
         for (int i = 0; i < stringToFormat.length(); i++) {
             String charToFormat = Character.toString(stringToFormat.charAt(i));
@@ -90,6 +85,12 @@ public class Utilitaires {
     }
 
     static String rechercheDichotomique(int[][] DFM, int a) {
+
+        for (int i = 0; i < a; i++) {
+            DFM[i][0] = 0;
+            DFM[i][1] = 10;
+            DFM[i][2] = (DFM[i][0] + DFM[i][1]) / 2;
+        }
 
         String rCode = "";
         for (int i = 0; i < a; i++) {
