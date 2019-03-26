@@ -1,5 +1,19 @@
+/**
+ * Cette class contient un ensemble de methode utile et reutilisable pour le programme.
+ *
+ * @author NoelH
+ */
 public class Utilitaires {
 
+
+    /**
+     *Permet de générer un nombre aléatoire.
+     *
+     * @param quantityToGenerate
+     *          Représente la quantité de chiffre à générer aléatoirement pour cette méthode.
+     * @return
+     *          Retourne un nombre aléatoire.
+     */
     static String randomNumberGenerator(int quantityToGenerate) {
 
         String generatedNumber = "";
@@ -11,6 +25,16 @@ public class Utilitaires {
         return generatedNumber;
     }
 
+    /**
+     *Permet de comparer deux nombres entre eux
+     *
+     * @param numberToCompare1
+     *          Correspond au nombre numero un
+     * @param numberToCompare2
+     *          Correspond au nombre numero deux
+     * @return
+     *          une chaine de caractere constitue de symbole tel que "+" "-" "="
+     */
     static String numberComparator(String numberToCompare1, String numberToCompare2) {
 
         String comparedNumber = "";
@@ -34,6 +58,11 @@ public class Utilitaires {
 
     }
 
+    /**
+     *
+     * @param stringToFormat
+     * @return
+     */
     static String styleFormat1(String stringToFormat) {
 
         String formatedString = "";
@@ -48,6 +77,12 @@ public class Utilitaires {
 
     }
 
+    /**
+     *
+     * @param numberToTest
+     * @param stringLengthToTest
+     * @return
+     */
     static boolean tryCatchMethod(String numberToTest, int stringLengthToTest) {
 
         if (numberToTest.length() == stringLengthToTest) {
@@ -70,6 +105,11 @@ public class Utilitaires {
         }
     }
 
+    /**
+     *
+     * @param codeToValidate
+     * @return
+     */
     static boolean winCondition(String codeToValidate) {
         int winPoint = 0;
         for (int i = 0; i < codeToValidate.length(); i++) {
@@ -84,6 +124,12 @@ public class Utilitaires {
         }
     }
 
+    /**
+     *
+     * @param DFM
+     * @param a
+     * @return
+     */
     static String rechercheDichotomique(int[][] DFM, int a) {
 
         for (int i = 0; i < a; i++) {
@@ -99,6 +145,13 @@ public class Utilitaires {
         return rCode;
     }
 
+    /**
+     *
+     * @param DFM
+     * @param lastIndice
+     * @param testCode
+     * @return
+     */
     static String rechercheDichotomique(int[][] DFM, String lastIndice, String testCode) {
 
         for (int i = 0; i < lastIndice.length(); i++) {

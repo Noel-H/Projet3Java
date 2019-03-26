@@ -1,7 +1,15 @@
 import java.util.Scanner;
 
+/**
+ * Cette class contient le mode de jeu "Challenger".
+ *
+ * @author NoelH
+ */
 public class ModeRechercheChallenger {
 
+    /**
+     *Methode pour le mode "Challenger".
+     */
     static void game() {
 
         do {

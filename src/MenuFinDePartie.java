@@ -1,7 +1,22 @@
 import java.util.Scanner;
 
+/**
+ * Cette class est un menu permettant de faire un choix a la fin d'une partie.
+ *
+ *<p><b>Exemple de partie :</b></p>
+ * @see ModeRechercheChallenger
+ * @see ModeRechercheDefenseur
+ * @see ModeRechercheDuel
+ * @author NoelH
+ */
 public class MenuFinDePartie {
 
+    /**
+     * Methode contenant le menu
+     *
+     * @return
+     *          retourne un booleen pour sortir de la boucle.
+     */
     static boolean enGameMenu() {
 
         boolean b = false;

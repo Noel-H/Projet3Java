@@ -1,7 +1,15 @@
 import java.util.Scanner;
 
+/**
+ *Class contenant le menu principal
+ *
+ * @author NoelH
+ */
 public class MenuPrincipal {
 
+    /**
+     *Methode du menu principal
+     */
     static void principalMenu() {
 
         boolean again = false;

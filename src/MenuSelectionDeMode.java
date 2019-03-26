@@ -1,7 +1,15 @@
 import java.util.Scanner;
 
+/**
+ * Cette class est un menu permettant la selection du mode de jeu.
+ *
+ * @author NoelH
+ */
 public class MenuSelectionDeMode {
 
+    /**
+     *Cette methode permet de choisir un mode de jeu.
+     */
     static void modeDeJeuMenu() {
 
         boolean again = false;

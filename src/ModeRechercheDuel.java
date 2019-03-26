@@ -1,7 +1,15 @@
 import java.util.Scanner;
 
+/**
+ * Cette class contient le mode de jeu "Duel".
+ *
+ * @author NoelH
+ */
 public class ModeRechercheDuel {
 
+    /**
+     *Methode pour le mode "Duel".
+     */
     static void game() {
 
         do {

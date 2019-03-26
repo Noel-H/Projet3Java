@@ -1,7 +1,15 @@
 import java.util.Scanner;
 
+/**
+ *Cette class contient le mode de jeu "Defenseur".
+ *
+ * @author NoelH
+ */
 public class ModeRechercheDefenseur {
 
+    /**
+     *Methode pour le mode "Defenseur".
+     */
     static void game() {
 
         do {
