@@ -7,12 +7,12 @@ public class Utilitaires {
 
 
     /**
-     *Permet de générer un nombre aléatoire.
+     *Permet de generer un nombre aleatoire.
      *
      * @param quantityToGenerate
-     *          Représente la quantité de chiffre à générer aléatoirement pour cette méthode.
+     *          Represente la quantite de chiffre a generer aleatoirement pour cette methode.
      * @return
-     *          Retourne un nombre aléatoire.
+     *          Retourne un nombre aleatoire.
      */
     static String randomNumberGenerator(int quantityToGenerate) {
 
@@ -59,9 +59,13 @@ public class Utilitaires {
     }
 
     /**
+     * Permet de formatter une chaine de caractere.
+     * Exemple : abcd = | a | b | c | d |
      *
      * @param stringToFormat
+     *          Correspond a la chaine de caractere
      * @return
+     *          La chaine de caracatere formatter
      */
     static String styleFormat1(String stringToFormat) {
 
@@ -78,10 +82,14 @@ public class Utilitaires {
     }
 
     /**
+     * Permet de verifier la validite que la saisie de l'user soit conforme
      *
      * @param numberToTest
+     *          Correspond au nombre a verifier
      * @param stringLengthToTest
+     *          Correspond a la longueur que doit avoir la chaine de caractere
      * @return
+     *          Retourne vrai ou faux en fonction du resultat
      */
     static boolean tryCatchMethod(String numberToTest, int stringLengthToTest) {
 
@@ -106,9 +114,12 @@ public class Utilitaires {
     }
 
     /**
+     * Permet de verifier si les condition de victoire sont atteinte
      *
      * @param codeToValidate
+     *          Correspond a la chaine de caratere qui doit etre verifier
      * @return
+     *          Retourne vrai ou faux en fonction du resultat
      */
     static boolean winCondition(String codeToValidate) {
         int winPoint = 0;
@@ -125,10 +136,15 @@ public class Utilitaires {
     }
 
     /**
+     * Permet de faire une recherche dichotomique sans indice et code
+     *
      *
      * @param DFM
+     *          Correspond au tableau a utiliser pour la methode
      * @param a
+     *          Correspond a la longueur de la chaine de caractere
      * @return
+     *          Retourne une chaine dde caractere correspond au resultat de la dichotomie
      */
     static String rechercheDichotomique(int[][] DFM, int a) {
 
@@ -146,11 +162,16 @@ public class Utilitaires {
     }
 
     /**
+     * Permet de faire une recherche dichotomique avec un indice et un code
      *
      * @param DFM
+     *          Correspond au tableau a utiliser pour la methode
      * @param lastIndice
+     *          Correspond a la chaine de caractere contenant les indices de la recherche precedente
      * @param testCode
+     *          Correspond a la chaine de caractere contenant le code precedent pour en generer un nouveau
      * @return
+     *          Retourne une chaine de caractere correspondant au nouveau code generer
      */
     static String rechercheDichotomique(int[][] DFM, String lastIndice, String testCode) {
 
