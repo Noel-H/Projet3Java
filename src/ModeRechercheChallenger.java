@@ -11,12 +11,11 @@ public class ModeRechercheChallenger {
      *Methode pour le mode "Challenger".
      */
     static void game() {
-
         do {
 
-            int nombreDeChiffreATrouver = 4;
+            int nombreDeChiffreATrouver = Integer.parseInt(Main.config.getProperty("nb_number_challenger", "4"));
             int nbTour=0;
-            int loseCondition=6;
+            int loseCondition=Integer.parseInt(Main.config.getProperty("nb_try_challenger", "6"));
 
             System.out.println("Chiffre dans le code secret = " + nombreDeChiffreATrouver);
 

@@ -15,7 +15,7 @@ public class ModeRechercheDuel {
         do {
 
             int nbTour=0;
-            int loseCondition=6;
+            int loseCondition=Integer.parseInt(Main.config.getProperty("nb_try_duel", "6"));
 
             String secretPlayerCode = "";
 
