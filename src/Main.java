@@ -1,3 +1,6 @@
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import java.io.*;
 import java.util.Properties;
 
@@ -24,15 +27,22 @@ public class Main {
             InputStream file = new FileInputStream("config.properties");
             config.load(file);
         } catch (FileNotFoundException e) {
-            System.out.println("Fichier non trouvé");
+//            System.out.println("Fichier non trouvé");
+            logger.error("Fichier \"config.properties\" non trouvé");
             return false;
         } catch (IOException e) {
-            System.out.println("Erreur de lecture");
+//            System.out.println("Erreur de lecture");
+            logger.error("Erreur de lecture");
             return false;
         }
 
         return true;
     }
+
+    //---------------------------------------------------------Log4j
+   static Logger logger = LogManager.getLogger(Main.class);
+
+    //---------------------------------------------------------
 
     /**
      * Methode main
@@ -41,8 +51,11 @@ public class Main {
      */
     static public void main(String... args) {
 
+
+        logger.trace("Entering MenuPrincipal.");
         if (loadConfig()) {
             MenuPrincipal.principalMenu();
         }
+
     }
 }
