@@ -28,8 +28,7 @@ public class MenuPrincipal {
 
                     System.out.println("Entrez le numéro correspondant au mode de jeu voulu.");
                     System.out.println("1 - Mode +/-");
-                    System.out.println("2 - Mastermind");
-                    System.out.println("3 - Quitter");
+                    System.out.println("2 - Quitter");
 
                     Scanner sc = new Scanner(System.in);
                     String selectionChoiceMenu = sc.nextLine();
@@ -58,15 +57,8 @@ public class MenuPrincipal {
 
                         break;
 
+
                     case 2:
-
-                        System.out.println();
-                        System.out.println("Choix indisponible pour le moment.");
-                        System.out.println();
-
-                        break;
-
-                    case 3:
 
                         System.out.println();
                         System.out.println("Bye bye.");
