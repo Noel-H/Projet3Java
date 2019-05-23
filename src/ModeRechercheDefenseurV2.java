@@ -65,7 +65,7 @@ public class ModeRechercheDefenseurV2 {
 
                     lastIndice = sc.nextLine();
 
-                    if (!Utilitaires.tryCatchMethod2(lastIndice, secretCode.length())) {
+                    if (!Utilitaires.indiceFormatVerification(lastIndice, secretCode.length())) {
                         System.out.println("Saisie incorrect.");
                     } else {
                         correctFormatValue2 = true;

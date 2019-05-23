@@ -103,7 +103,14 @@ public class Utilitaires {
         }
     }
 
-    static boolean tryCatchMethod2(String indiceToTest, int stringLengthToTest) {
+    /**
+     * Permet de vérifier le format de l'indice donne par l'user
+     *
+     * @param indiceToTest          Correspond à l'indice donne par l'user
+     * @param stringLengthToTest    Correspond à la longueur que doit avoir la chaine de caractere
+     * @return                      Retourne vrai ou faux en fonction du resultat
+     */
+    static boolean indiceFormatVerification(String indiceToTest, int stringLengthToTest) {
 
         int correctIndiceFormat = 0;
 
@@ -155,21 +162,21 @@ public class Utilitaires {
      *
      * @param DFM
      *          Correspond au tableau a utiliser pour la methode
-     * @param a
+     * @param codeLength
      *          Correspond a la longueur de la chaine de caractere
      * @return
      *          Retourne une chaine dde caractere correspond au resultat de la dichotomie
      */
-    static String rechercheDichotomique(int[][] DFM, int a) {
+    static String rechercheDichotomique(int[][] DFM, int codeLength) {
 
-        for (int i = 0; i < a; i++) {
+        for (int i = 0; i < codeLength; i++) {
             DFM[i][0] = 0;
             DFM[i][1] = 10;
             DFM[i][2] = (DFM[i][0] + DFM[i][1]) / 2;
         }
 
         String rCode = "";
-        for (int i = 0; i < a; i++) {
+        for (int i = 0; i < codeLength; i++) {
             rCode = rCode + DFM[i][2];
         }
         return rCode;
