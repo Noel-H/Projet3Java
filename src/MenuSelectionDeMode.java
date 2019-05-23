@@ -67,7 +67,7 @@ public class MenuSelectionDeMode {
 
                     case 2:
 
-                        ModeRechercheDefenseur.game();
+                        ModeRechercheDefenseurV2.game();
 
                         selectedMenu = true;
                         again = true;

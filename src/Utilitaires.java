@@ -7,33 +7,28 @@ public class Utilitaires {
 
 
     /**
-     *Permet de generer un nombre aleatoire.
+     * Permet de generer un nombre aleatoire.
      *
-     * @param quantityToGenerate
-     *          Represente la quantite de chiffre a generer aleatoirement pour cette methode.
-     * @return
-     *          Retourne un nombre aleatoire.
+     * @param quantityToGenerate Represente la quantite de chiffre a generer aleatoirement pour cette methode.
+     * @return Retourne un nombre aleatoire.
      */
     static String randomNumberGenerator(int quantityToGenerate) {
 
         String generatedNumber = "";
 
         for (int i = 0; i < quantityToGenerate; i++) {
-            generatedNumber=generatedNumber+((int) (Math.random() * 10));
+            generatedNumber = generatedNumber + ((int) (Math.random() * 10));
         }
 
         return generatedNumber;
     }
 
     /**
-     *Permet de comparer deux nombres entre eux
+     * Permet de comparer deux nombres entre eux
      *
-     * @param numberToCompare1
-     *          Correspond au nombre numero un
-     * @param numberToCompare2
-     *          Correspond au nombre numero deux
-     * @return
-     *          une chaine de caractere constitue de symbole tel que "+" "-" "="
+     * @param numberToCompare1 Correspond au nombre numero un
+     * @param numberToCompare2 Correspond au nombre numero deux
+     * @return une chaine de caractere constitue de symbole tel que "+" "-" "="
      */
     static String numberComparator(String numberToCompare1, String numberToCompare2) {
 
@@ -62,10 +57,8 @@ public class Utilitaires {
      * Permet de formatter une chaine de caractere.
      * Exemple : abcd = | a | b | c | d |
      *
-     * @param stringToFormat
-     *          Correspond a la chaine de caractere
-     * @return
-     *          La chaine de caracatere formatter
+     * @param stringToFormat Correspond a la chaine de caractere
+     * @return La chaine de caracatere formatter
      */
     static String styleFormat1(String stringToFormat) {
 
@@ -84,12 +77,9 @@ public class Utilitaires {
     /**
      * Permet de verifier la validite que la saisie de l'user soit conforme
      *
-     * @param numberToTest
-     *          Correspond au nombre a verifier
-     * @param stringLengthToTest
-     *          Correspond a la longueur que doit avoir la chaine de caractere
-     * @return
-     *          Retourne vrai ou faux en fonction du resultat
+     * @param numberToTest       Correspond au nombre a verifier
+     * @param stringLengthToTest Correspond a la longueur que doit avoir la chaine de caractere
+     * @return Retourne vrai ou faux en fonction du resultat
      */
     static boolean tryCatchMethod(String numberToTest, int stringLengthToTest) {
 
@@ -112,6 +102,30 @@ public class Utilitaires {
             return false;
         }
     }
+
+    static boolean tryCatchMethod2(String indiceToTest, int stringLengthToTest) {
+
+        int correctIndiceFormat = 0;
+
+        if (indiceToTest.length() == stringLengthToTest) {
+
+            for (int i = 0; i < stringLengthToTest; i++) {
+
+                if (Character.toString(indiceToTest.charAt(i)).equals("=") || Character.toString(indiceToTest.charAt(i)).equals("+") || Character.toString(indiceToTest.charAt(i)).equals("-")) {
+                    correctIndiceFormat++;
+                }
+            }
+
+            if (correctIndiceFormat == stringLengthToTest){
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
 
     /**
      * Permet de verifier si les condition de victoire sont atteinte
