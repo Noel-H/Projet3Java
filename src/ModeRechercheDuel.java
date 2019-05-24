@@ -42,6 +42,10 @@ public class ModeRechercheDuel {
             String secretOrdiCode = Utilitaires.randomNumberGenerator(secretPlayerCode.length());
             System.out.println("Le code secret de l'ordinateur est généré.");
 
+            if (Boolean.parseBoolean(Main.config.getProperty("developper_mode"))){
+                System.out.println("Developper Mode Solution = "+secretOrdiCode);
+            }
+
             String playerReponse = "";
 
             int DFM[][] = new int[secretPlayerCode.length()][3];

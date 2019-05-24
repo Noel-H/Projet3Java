@@ -22,10 +22,8 @@ public class ModeRechercheChallenger {
             String secretCode = Utilitaires.randomNumberGenerator(nombreDeChiffreATrouver);
             System.out.println("Le code secret est généré.");
 
-            boolean developperMode = Boolean.parseBoolean(Main.config.getProperty("developper_mode"));
-
-            if (developperMode){
-                System.out.println("Developper Mode Solution : "+secretCode);
+            if (Boolean.parseBoolean(Main.config.getProperty("developper_mode"))){
+                System.out.println("Developper Mode Solution = "+secretCode);
             }
 
             String playerReponse = "";
