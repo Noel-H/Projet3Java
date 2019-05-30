@@ -13,16 +13,16 @@ public class ModeRechercheChallenger {
     static void game() {
         do {
 
-            int nombreDeChiffreATrouver = Integer.parseInt(Main.config.getProperty("nb_number_challenger", "4"));
+            int nombreDeChiffreATrouver = Main.NB_NUMBER_LENGTH;
             int nbTour=0;
-            int loseCondition=Integer.parseInt(Main.config.getProperty("nb_try_challenger", "6"));
+            int loseCondition= Main.NB_TRY;
 
             System.out.println("Chiffre dans le code secret = " + nombreDeChiffreATrouver);
 
             String secretCode = Utilitaires.randomNumberGenerator(nombreDeChiffreATrouver);
             System.out.println("Le code secret est généré.");
 
-            if (Boolean.parseBoolean(Main.config.getProperty("developper_mode"))){
+            if (Main.DEVELOPPER_MODE){
                 System.out.println("Developper Mode Solution = "+secretCode);
             }
 

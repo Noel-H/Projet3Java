@@ -15,7 +15,7 @@ public class ModeRechercheDuel {
         do {
 
             int nbTour=0;
-            int loseCondition=Integer.parseInt(Main.config.getProperty("nb_try_duel", "6"));
+            int loseCondition=Main.NB_TRY;
 
             String secretPlayerCode = "";
 
@@ -42,7 +42,7 @@ public class ModeRechercheDuel {
             String secretOrdiCode = Utilitaires.randomNumberGenerator(secretPlayerCode.length());
             System.out.println("Le code secret de l'ordinateur est généré.");
 
-            if (Boolean.parseBoolean(Main.config.getProperty("developper_mode"))){
+            if (Main.DEVELOPPER_MODE){
                 System.out.println("Developper Mode Solution = "+secretOrdiCode);
             }
 

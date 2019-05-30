@@ -11,6 +11,10 @@ import java.util.Properties;
  */
 public class Main {
 
+    public static int NB_TRY = 6;
+    public static int NB_NUMBER_LENGTH = 4;
+    public static boolean DEVELOPPER_MODE = false;
+
     static public Properties config;
 
     /**
@@ -29,7 +33,7 @@ public class Main {
         } catch (FileNotFoundException e) {
 //            System.out.println("Fichier non trouvé");
             logger.error("Fichier \"config.properties\" non trouvé");
-            return false;
+            return true;
         } catch (IOException e) {
 //            System.out.println("Erreur de lecture");
             logger.error("Erreur de lecture");
@@ -40,9 +44,10 @@ public class Main {
     }
 
     //---------------------------------------------------------Log4j
-   static Logger logger = LogManager.getLogger(Main.class);
+    static Logger logger = LogManager.getLogger(Main.class);
 
     //---------------------------------------------------------
+
 
     /**
      * Methode main
@@ -54,8 +59,15 @@ public class Main {
 
         logger.trace("Entering MenuPrincipal.");
         if (loadConfig()) {
+
+            try {
+                NB_TRY = Integer.parseInt(Main.config.getProperty("nb_try"));
+                NB_NUMBER_LENGTH = Integer.parseInt(Main.config.getProperty("nb_number_length"));
+                DEVELOPPER_MODE = Boolean.parseBoolean(Main.config.getProperty("developper_mode"));
+            } catch (NumberFormatException e){
+                logger.error("Certaines valeurs du fichier de configuration sont incorrectes. Une valeur par défaut sera utilisé.");
+            }
             MenuPrincipal.principalMenu();
         }
-
     }
 }
