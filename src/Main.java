@@ -21,7 +21,6 @@ public class Main {
      */
     static public void main(String[] args) {
 
-
 //        logger.trace("Entering MenuPrincipal.");
 
         Configuration.ConfigParam();
