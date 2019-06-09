@@ -15,7 +15,7 @@ public class ModeRechercheDefenseur {
         do {
 
             int nbTour=0;
-            int loseCondition=Integer.parseInt(Main.config.getProperty("nb_try_defenseur", "6"));
+            int loseCondition=Integer.parseInt(Configuration.config.getProperty("nb_try_defenseur", "6"));
 
             String secretCode = "";
             String testCode = "";

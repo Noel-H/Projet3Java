@@ -15,7 +15,7 @@ public class ModeRechercheDefenseurV2 {
         do {
 
             int nbTour=0;
-            int loseCondition=Main.NB_TRY;
+            int loseCondition=Configuration.NB_TRY;
 
             String secretCode = "";
             String testCode = "";
