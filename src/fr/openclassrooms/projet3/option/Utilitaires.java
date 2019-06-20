@@ -1,3 +1,5 @@
+package fr.openclassrooms.projet3.option;
+
 /**
  * Cette class contient un ensemble de methode utile et reutilisable pour le programme.
  *
@@ -12,7 +14,7 @@ public class Utilitaires {
      * @param quantityToGenerate Represente la quantite de chiffre a generer aleatoirement pour cette methode.
      * @return Retourne un nombre aleatoire.
      */
-    static String randomNumberGenerator(int quantityToGenerate) {
+    public static String randomNumberGenerator(int quantityToGenerate) {
 
         String generatedNumber = "";
 
@@ -30,7 +32,7 @@ public class Utilitaires {
      * @param numberToCompare2 Correspond au nombre numero deux
      * @return une chaine de caractere constitue de symbole tel que "+" "-" "="
      */
-    static String numberComparator(String numberToCompare1, String numberToCompare2) {
+    public static String numberComparator(String numberToCompare1, String numberToCompare2) {
 
         String comparedNumber = "";
 
@@ -60,7 +62,7 @@ public class Utilitaires {
      * @param stringToFormat Correspond a la chaine de caractere
      * @return La chaine de caracatere formatter
      */
-    static String styleFormat1(String stringToFormat) {
+    public static String styleFormat1(String stringToFormat) {
 
         String formatedString = "";
 
@@ -81,7 +83,7 @@ public class Utilitaires {
      * @param stringLengthToTest Correspond a la longueur que doit avoir la chaine de caractere
      * @return Retourne vrai ou faux en fonction du resultat
      */
-    static boolean tryCatchMethod(String numberToTest, int stringLengthToTest) {
+    public static boolean tryCatchMethod(String numberToTest, int stringLengthToTest) {
 
         if (numberToTest.length() == stringLengthToTest) {
 
@@ -110,7 +112,7 @@ public class Utilitaires {
      * @param stringLengthToTest    Correspond à la longueur que doit avoir la chaine de caractere
      * @return                      Retourne vrai ou faux en fonction du resultat
      */
-    static boolean indiceFormatVerification(String indiceToTest, int stringLengthToTest) {
+    public static boolean indiceFormatVerification(String indiceToTest, int stringLengthToTest) {
 
         int correctIndiceFormat = 0;
 
@@ -142,7 +144,7 @@ public class Utilitaires {
      * @return
      *          Retourne vrai ou faux en fonction du resultat
      */
-    static boolean winCondition(String codeToValidate) {
+    public static boolean winCondition(String codeToValidate) {
         int winPoint = 0;
         for (int i = 0; i < codeToValidate.length(); i++) {
             if (Character.toString(codeToValidate.charAt(i)).equals("=")) {
@@ -167,7 +169,7 @@ public class Utilitaires {
      * @return
      *          Retourne une chaine dde caractere correspond au resultat de la dichotomie
      */
-    static String rechercheDichotomique(int[][] DFM, int codeLength) {
+    public static String rechercheDichotomique(int[][] DFM, int codeLength) {
 
         for (int i = 0; i < codeLength; i++) {
             DFM[i][0] = 0;
@@ -194,7 +196,7 @@ public class Utilitaires {
      * @return
      *          Retourne une chaine de caractere correspondant au nouveau code generer
      */
-    static String rechercheDichotomique(int[][] DFM, String lastIndice, String testCode) {
+    public static String rechercheDichotomique(int[][] DFM, String lastIndice, String testCode) {
 
         for (int i = 0; i < lastIndice.length(); i++) {
             if (Character.toString(lastIndice.charAt(i)).equals("+")) {

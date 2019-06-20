@@ -1,3 +1,9 @@
+package fr.openclassrooms.projet3.modedejeu;
+
+import fr.openclassrooms.projet3.menu.MenuFinDePartie;
+import fr.openclassrooms.projet3.option.Configuration;
+import fr.openclassrooms.projet3.option.Utilitaires;
+
 import java.util.Scanner;
 
 /**
@@ -10,12 +16,12 @@ public class ModeRechercheDuel {
     /**
      *Methode pour le mode "Duel".
      */
-    static void game() {
+    public static void game() {
 
         do {
 
             int nbTour=0;
-            int loseCondition=Configuration.NB_TRY;
+            int loseCondition= Configuration.NB_TRY;
 
             String secretPlayerCode = "";
 
@@ -26,7 +32,7 @@ public class ModeRechercheDuel {
 
             while (!correctFormatValue) {
 
-                System.out.println("Pour généré votre code secret, entrez une combinaisons de chiffre.");
+                System.out.println("Pour génerer votre code secret, entrez une combinaisons de chiffre.");
 
                 Scanner sc = new Scanner(System.in);
 
@@ -95,12 +101,12 @@ public class ModeRechercheDuel {
                     winConditionOk = true;
                 } else if (Utilitaires.winCondition(resultatOrdiEnOperator)) {
                     System.out.println("Vous avez perdu.");
-                    System.out.println("Le joueur devait trouver : "+Utilitaires.styleFormat1(secretOrdiCode));
+                    System.out.println("Le joueur devait trouver : "+ Utilitaires.styleFormat1(secretOrdiCode));
                     winConditionOk = true;
                 }else if (loseCondition==nbTour){
                     System.out.println("Vous avez Perdu.");
-                    System.out.println("Le joueur devait trouver : "+Utilitaires.styleFormat1(secretOrdiCode));
-                    System.out.println("L'ordinateur devait trouver : "+Utilitaires.styleFormat1(secretPlayerCode));
+                    System.out.println("Le joueur devait trouver : "+ Utilitaires.styleFormat1(secretOrdiCode));
+                    System.out.println("L'ordinateur devait trouver : "+ Utilitaires.styleFormat1(secretPlayerCode));
                     winConditionOk = true;
                 }
             }

@@ -1,3 +1,9 @@
+package fr.openclassrooms.projet3.modedejeu;
+
+import fr.openclassrooms.projet3.menu.MenuFinDePartie;
+import fr.openclassrooms.projet3.option.Configuration;
+import fr.openclassrooms.projet3.option.Utilitaires;
+
 import java.util.Scanner;
 
 /**
@@ -10,7 +16,7 @@ public class ModeRechercheChallenger {
     /**
      *Methode pour le mode "Challenger".
      */
-    static void game() {
+    public static void game() {
         do {
 
             int nombreDeChiffreATrouver = Configuration.NB_NUMBER_LENGTH;
@@ -62,7 +68,7 @@ public class ModeRechercheChallenger {
                     winConditionOk = true;
                 } else if (loseCondition==nbTour){
                     System.out.println("Vous avez Perdu.");
-                    System.out.println("Solution = "+Utilitaires.styleFormat1(secretCode));
+                    System.out.println("Solution = "+ Utilitaires.styleFormat1(secretCode));
                     winConditionOk = true;
                 }
             }

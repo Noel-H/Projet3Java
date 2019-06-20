@@ -1,3 +1,5 @@
+package fr.openclassrooms.projet3.option;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -33,7 +35,7 @@ public class Configuration {
     }
 
     ///////////////////////////////////////
-    static void ConfigParam(){
+    public static void ConfigParam(){
         if (loadConfig()) {
             try {
                 NB_TRY = Integer.parseInt(Configuration.config.getProperty("nb_try"));

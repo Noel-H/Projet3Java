@@ -1,3 +1,9 @@
+package fr.openclassrooms.projet3.modedejeu;
+
+import fr.openclassrooms.projet3.menu.MenuFinDePartie;
+import fr.openclassrooms.projet3.option.Configuration;
+import fr.openclassrooms.projet3.option.Utilitaires;
+
 import java.util.Scanner;
 
 /**
@@ -10,12 +16,12 @@ public class ModeRechercheDefenseurV2 {
     /**
      *Methode pour le mode "Defenseur".
      */
-    static void game() {
+    public static void game() {
 
         do {
 
             int nbTour=0;
-            int loseCondition=Configuration.NB_TRY;
+            int loseCondition= Configuration.NB_TRY;
 
             String secretCode = "";
             String testCode = "";
@@ -77,7 +83,7 @@ public class ModeRechercheDefenseurV2 {
                     winConditionOk = true;
                 }else if (loseCondition==nbTour){
                     System.out.println("L'ordinateur a perdu.");
-                    System.out.println("Solution = "+Utilitaires.styleFormat1(secretCode));
+                    System.out.println("Solution = "+ Utilitaires.styleFormat1(secretCode));
                     winConditionOk = true;
                 }
             }

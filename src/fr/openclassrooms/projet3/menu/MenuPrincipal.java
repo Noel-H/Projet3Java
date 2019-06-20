@@ -1,3 +1,5 @@
+package fr.openclassrooms.projet3.menu;
+
 import java.util.Scanner;
 
 /**
@@ -10,7 +12,7 @@ public class MenuPrincipal {
     /**
      *Methode du menu principal
      */
-    static void principalMenu() {
+    public static void principalMenu() {
 
         boolean again = false;
 

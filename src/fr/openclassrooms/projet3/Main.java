@@ -1,15 +1,19 @@
+package fr.openclassrooms.projet3;
+
+import fr.openclassrooms.projet3.option.Configuration;
+import fr.openclassrooms.projet3.menu.MenuPrincipal;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 /**
- * Class Main
+ * Class fr.openclassrooms.projet3.Main
  *
  * @author Noel-H
  */
 public class Main {
 
     //---------------------------------------------------------Log4j
-//    static Logger logger = LogManager.getLogger(Main.class);
+    static Logger logger = LogManager.getLogger(Main.class);
 
     //---------------------------------------------------------
 
@@ -21,7 +25,7 @@ public class Main {
      */
     static public void main(String[] args) {
 
-//        logger.trace("Entering MenuPrincipal.");
+        logger.trace("Entering fr.openclassrooms.projet3.menu.MenuPrincipal.");
 
         Configuration.ConfigParam();
 
