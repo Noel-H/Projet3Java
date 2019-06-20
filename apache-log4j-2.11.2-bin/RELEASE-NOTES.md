@@ -46,7 +46,7 @@ with multi-release jars and may fail trying to process class files in the META-I
 Those errors should be reported to the tool vendor.
 
 Note that subsequent to the 2.9.0 release, for security reasons, Log4j does not process DTD in XML files.
-If you used DTD for including snippets, you have to use XInclude or Composite fr.openclassrooms.projet3.option.Configuration instead.
+If you used DTD for including snippets, you have to use XInclude or Composite fr.openclassrooms.projet3.Model.option.Configuration instead.
 
 Also subsequent to the 2.9.0 release, for security reasons, SerializedLayout is deprecated and no
 longer used as default in the Socket and JMS appenders. SerializedLayout can still be used as before,
@@ -113,7 +113,7 @@ Direct write was creating files with the wrong date/time.
 * [LOG4J2-2453](https://issues.apache.org/jira/browse/LOG4J2-2453):
 Add Log4j-slf4j18-impl dependency to bom pom. Thanks to theit.
 * [LOG4J2-2515](https://issues.apache.org/jira/browse/LOG4J2-2515):
-fr.openclassrooms.projet3.option.Configuration documentation referenced incorrect method name. Thanks to MakarovS.
+fr.openclassrooms.projet3.Model.option.Configuration documentation referenced incorrect method name. Thanks to MakarovS.
 * [LOG4J2-2514](https://issues.apache.org/jira/browse/LOG4J2-2514):
 Make Strings.toRootUpperCase a static method so it can be accessed. Thanks to smilebrian0515.
 * [LOG4J2-1571](https://issues.apache.org/jira/browse/LOG4J2-1571):

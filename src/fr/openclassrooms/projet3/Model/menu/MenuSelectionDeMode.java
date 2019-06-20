@@ -1,18 +1,22 @@
-package fr.openclassrooms.projet3.menu;
+package fr.openclassrooms.projet3.Model.menu;
+
+import fr.openclassrooms.projet3.Model.modedejeu.ModeRechercheChallenger;
+import fr.openclassrooms.projet3.Model.modedejeu.ModeRechercheDuel;
+import fr.openclassrooms.projet3.Model.modedejeu.ModeRechercheDefenseurV2;
 
 import java.util.Scanner;
 
 /**
- *Class contenant le menu principal
+ * Cette class est un menu permettant la selection du mode de jeu.
  *
  * @author NoelH
  */
-public class MenuPrincipal {
+public class MenuSelectionDeMode {
 
     /**
-     *Methode du menu principal
+     *Cette methode permet de choisir un mode de jeu.
      */
-    public static void principalMenu() {
+    public static void modeDeJeuMenu() {
 
         boolean again = false;
 
@@ -28,9 +32,13 @@ public class MenuPrincipal {
 
                 while (!corectValueForMenu) {
 
+                    System.out.println();
                     System.out.println("Entrez le numéro correspondant au mode de jeu voulu.");
-                    System.out.println("1 - Mode +/-");
-                    System.out.println("2 - Quitter");
+                    System.out.println("1 - Challenger");
+                    System.out.println("2 - Defenseur");
+                    System.out.println("3 - Duel");
+                    System.out.println("4 - Retour");
+                    System.out.println("5 - Quitter");
 
                     Scanner sc = new Scanner(System.in);
                     String selectionChoiceMenu = sc.nextLine();
@@ -39,6 +47,7 @@ public class MenuPrincipal {
                     try {
 
                         numberSelectionChoiceMenu = Integer.parseInt(selectionChoiceMenu);
+
                         corectValueForMenu = true;
 
                     } catch (NumberFormatException e) {
@@ -51,16 +60,43 @@ public class MenuPrincipal {
                     }
                 }
 
+
                 switch (numberSelectionChoiceMenu) {
                     case 1:
 
-                        MenuSelectionDeMode.modeDeJeuMenu();
+                        ModeRechercheChallenger.game();
+
+                        selectedMenu = true;
+                        again = true;
+
+                        break;
+
+                    case 2:
+
+                        ModeRechercheDefenseurV2.game();
+
+                        selectedMenu = true;
+                        again = true;
+
+                        break;
+
+                    case 3:
+
+                        ModeRechercheDuel.game();
+
+                        selectedMenu = true;
+                        again = true;
+
+                        break;
+
+                    case 4:
+
+                        again = true;
                         selectedMenu = true;
 
                         break;
 
-
-                    case 2:
+                    case 5:
 
                         System.out.println();
                         System.out.println("Bye bye.");
@@ -76,6 +112,7 @@ public class MenuPrincipal {
                         System.out.println("Saisie incorrect.");
                         System.out.println("Veuillez recommencer");
                         System.out.println();
+
                 }
             }
         }

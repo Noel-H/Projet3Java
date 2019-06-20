@@ -1,4 +1,4 @@
-package fr.openclassrooms.projet3.option;
+package fr.openclassrooms.projet3.Model.option;
 
 /**
  * Cette class contient un ensemble de methode utile et reutilisable pour le programme.

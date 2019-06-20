@@ -1,8 +1,8 @@
-package fr.openclassrooms.projet3.modedejeu;
+package fr.openclassrooms.projet3.Model.modedejeu;
 
-import fr.openclassrooms.projet3.menu.MenuFinDePartie;
-import fr.openclassrooms.projet3.option.Configuration;
-import fr.openclassrooms.projet3.option.Utilitaires;
+import fr.openclassrooms.projet3.Model.menu.MenuFinDePartie;
+import fr.openclassrooms.projet3.Model.option.Configuration;
+import fr.openclassrooms.projet3.Model.option.Utilitaires;
 
 import java.util.Scanner;
 
@@ -11,17 +11,17 @@ import java.util.Scanner;
  *
  * @author NoelH
  */
-public class ModeRechercheDefenseurV2 {
+public class ModeRechercheDefenseur {
 
     /**
      *Methode pour le mode "Defenseur".
      */
-    public static void game() {
+    static void game() {
 
         do {
 
             int nbTour=0;
-            int loseCondition= Configuration.NB_TRY;
+            int loseCondition=Integer.parseInt(Configuration.config.getProperty("nb_try_defenseur", "6"));
 
             String secretCode = "";
             String testCode = "";
@@ -59,24 +59,9 @@ public class ModeRechercheDefenseurV2 {
                     testCode = Utilitaires.rechercheDichotomique(DFM, lastIndice, testCode);
                 }
 
+                lastIndice = Utilitaires.numberComparator(testCode, secretCode);
                 System.out.println(Utilitaires.styleFormat1(testCode));
-
-                boolean correctFormatValue2 = false;
-
-                while (!correctFormatValue2) {
-
-                    System.out.println("Entrez l'indice.");
-
-                    Scanner sc = new Scanner(System.in);
-
-                    lastIndice = sc.nextLine();
-
-                    if (!Utilitaires.indiceFormatVerification(lastIndice, secretCode.length())) {
-                        System.out.println("Saisie incorrect.");
-                    } else {
-                        correctFormatValue2 = true;
-                    }
-                }
+                System.out.println(Utilitaires.styleFormat1(lastIndice));
 
                 if (Utilitaires.winCondition(lastIndice)) {
                     System.out.println("L'ordinateur a gagné. GG WP !!");

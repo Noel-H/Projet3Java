@@ -1,26 +1,35 @@
-package fr.openclassrooms.projet3.menu;
+package fr.openclassrooms.projet3.Model.menu;
 
-import fr.openclassrooms.projet3.modedejeu.ModeRechercheChallenger;
-import fr.openclassrooms.projet3.modedejeu.ModeRechercheDuel;
-import fr.openclassrooms.projet3.modedejeu.ModeRechercheDefenseurV2;
+import fr.openclassrooms.projet3.Model.modedejeu.ModeRechercheChallenger;
+import fr.openclassrooms.projet3.Model.modedejeu.ModeRechercheDefenseurV2;
+import fr.openclassrooms.projet3.Model.modedejeu.ModeRechercheDuel;
 
 import java.util.Scanner;
 
 /**
- * Cette class est un menu permettant la selection du mode de jeu.
+ * Cette class est un menu permettant de faire un choix a la fin d'une partie.
  *
+ *<p><b>Exemple de partie :</b></p>
+ * @see ModeRechercheChallenger
+ * @see ModeRechercheDefenseurV2
+ * @see ModeRechercheDuel
  * @author NoelH
  */
-public class MenuSelectionDeMode {
+public class MenuFinDePartie {
 
     /**
-     *Cette methode permet de choisir un mode de jeu.
+     * Methode contenant le menu
+     *
+     * @return
+     *          retourne un booleen pour sortir de la boucle.
      */
-    public static void modeDeJeuMenu() {
+    public static boolean enGameMenu() {
 
-        boolean again = false;
+        boolean b = false;
 
-        while (!again) {
+        boolean again01 = false;
+
+        while (!again01) {
 
             boolean selectedMenu = false;
 
@@ -32,13 +41,10 @@ public class MenuSelectionDeMode {
 
                 while (!corectValueForMenu) {
 
-                    System.out.println();
                     System.out.println("Entrez le numéro correspondant au mode de jeu voulu.");
-                    System.out.println("1 - Challenger");
-                    System.out.println("2 - Defenseur");
-                    System.out.println("3 - Duel");
-                    System.out.println("4 - Retour");
-                    System.out.println("5 - Quitter");
+                    System.out.println("1 - Rejouer");
+                    System.out.println("2 - Menu Principal");
+                    System.out.println("3 - Quitter");
 
                     Scanner sc = new Scanner(System.in);
                     String selectionChoiceMenu = sc.nextLine();
@@ -47,7 +53,6 @@ public class MenuSelectionDeMode {
                     try {
 
                         numberSelectionChoiceMenu = Integer.parseInt(selectionChoiceMenu);
-
                         corectValueForMenu = true;
 
                     } catch (NumberFormatException e) {
@@ -64,39 +69,25 @@ public class MenuSelectionDeMode {
                 switch (numberSelectionChoiceMenu) {
                     case 1:
 
-                        ModeRechercheChallenger.game();
-
                         selectedMenu = true;
-                        again = true;
+                        again01 = true;
 
                         break;
 
                     case 2:
 
-                        ModeRechercheDefenseurV2.game();
+                        System.out.println();
+                        System.out.println("Retour au Menu principal");
+                        System.out.println();
 
+                        b = true;
                         selectedMenu = true;
-                        again = true;
+                        again01 = true;
+////                        again = true;
 
                         break;
 
                     case 3:
-
-                        ModeRechercheDuel.game();
-
-                        selectedMenu = true;
-                        again = true;
-
-                        break;
-
-                    case 4:
-
-                        again = true;
-                        selectedMenu = true;
-
-                        break;
-
-                    case 5:
 
                         System.out.println();
                         System.out.println("Bye bye.");
@@ -112,9 +103,9 @@ public class MenuSelectionDeMode {
                         System.out.println("Saisie incorrect.");
                         System.out.println("Veuillez recommencer");
                         System.out.println();
-
                 }
             }
         }
+        return b;
     }
 }

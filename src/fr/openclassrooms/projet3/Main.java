@@ -1,7 +1,7 @@
 package fr.openclassrooms.projet3;
 
-import fr.openclassrooms.projet3.option.Configuration;
-import fr.openclassrooms.projet3.menu.MenuPrincipal;
+import fr.openclassrooms.projet3.Model.option.Configuration;
+import fr.openclassrooms.projet3.Model.menu.MenuPrincipal;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -25,7 +25,7 @@ public class Main {
      */
     static public void main(String[] args) {
 
-        logger.trace("Entering fr.openclassrooms.projet3.menu.MenuPrincipal.");
+        logger.trace("Entering fr.openclassrooms.projet3.Model.menu.MenuPrincipal.");
 
         Configuration.ConfigParam();
 

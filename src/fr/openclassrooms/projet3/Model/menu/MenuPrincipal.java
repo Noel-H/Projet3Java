@@ -1,35 +1,22 @@
-package fr.openclassrooms.projet3.menu;
-
-import fr.openclassrooms.projet3.modedejeu.ModeRechercheChallenger;
-import fr.openclassrooms.projet3.modedejeu.ModeRechercheDefenseurV2;
-import fr.openclassrooms.projet3.modedejeu.ModeRechercheDuel;
+package fr.openclassrooms.projet3.Model.menu;
 
 import java.util.Scanner;
 
 /**
- * Cette class est un menu permettant de faire un choix a la fin d'une partie.
+ *Class contenant le menu principal
  *
- *<p><b>Exemple de partie :</b></p>
- * @see ModeRechercheChallenger
- * @see ModeRechercheDefenseurV2
- * @see ModeRechercheDuel
  * @author NoelH
  */
-public class MenuFinDePartie {
+public class MenuPrincipal {
 
     /**
-     * Methode contenant le menu
-     *
-     * @return
-     *          retourne un booleen pour sortir de la boucle.
+     *Methode du menu principal
      */
-    public static boolean enGameMenu() {
+    public static void principalMenu() {
 
-        boolean b = false;
+        boolean again = false;
 
-        boolean again01 = false;
-
-        while (!again01) {
+        while (!again) {
 
             boolean selectedMenu = false;
 
@@ -42,9 +29,8 @@ public class MenuFinDePartie {
                 while (!corectValueForMenu) {
 
                     System.out.println("Entrez le numéro correspondant au mode de jeu voulu.");
-                    System.out.println("1 - Rejouer");
-                    System.out.println("2 - Menu Principal");
-                    System.out.println("3 - Quitter");
+                    System.out.println("1 - Mode +/-");
+                    System.out.println("2 - Quitter");
 
                     Scanner sc = new Scanner(System.in);
                     String selectionChoiceMenu = sc.nextLine();
@@ -65,29 +51,16 @@ public class MenuFinDePartie {
                     }
                 }
 
-
                 switch (numberSelectionChoiceMenu) {
                     case 1:
 
+                        MenuSelectionDeMode.modeDeJeuMenu();
                         selectedMenu = true;
-                        again01 = true;
 
                         break;
+
 
                     case 2:
-
-                        System.out.println();
-                        System.out.println("Retour au Menu principal");
-                        System.out.println();
-
-                        b = true;
-                        selectedMenu = true;
-                        again01 = true;
-////                        again = true;
-
-                        break;
-
-                    case 3:
 
                         System.out.println();
                         System.out.println("Bye bye.");
@@ -106,6 +79,5 @@ public class MenuFinDePartie {
                 }
             }
         }
-        return b;
     }
 }

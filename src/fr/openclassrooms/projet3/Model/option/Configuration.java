@@ -1,4 +1,4 @@
-package fr.openclassrooms.projet3.option;
+package fr.openclassrooms.projet3.Model.option;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

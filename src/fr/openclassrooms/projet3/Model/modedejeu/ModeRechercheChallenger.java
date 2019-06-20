@@ -1,8 +1,8 @@
-package fr.openclassrooms.projet3.modedejeu;
+package fr.openclassrooms.projet3.Model.modedejeu;
 
-import fr.openclassrooms.projet3.menu.MenuFinDePartie;
-import fr.openclassrooms.projet3.option.Configuration;
-import fr.openclassrooms.projet3.option.Utilitaires;
+import fr.openclassrooms.projet3.Model.menu.MenuFinDePartie;
+import fr.openclassrooms.projet3.Model.option.Configuration;
+import fr.openclassrooms.projet3.Model.option.Utilitaires;
 
 import java.util.Scanner;
 
