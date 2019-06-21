@@ -17,95 +17,101 @@ import java.util.Scanner;
  */
 public class MenuFinDePartie {
 
+    private static boolean leaveEndGameMenu;
+
+    public static void displayEndGameMenu(){
+        System.out.println("Partie terminée. Voulez vous rejouez?");
+        System.out.println("1 - Rejouer");
+        System.out.println("2 - Menu Principal");
+        System.out.println("3 - Quitter");
+    }
+
+    public static String getUserEntry(){
+        Scanner sc = new Scanner(System.in);
+        return sc.nextLine();
+    }
+
+    public static void displayIncorrectEntryMessage(){
+        System.out.println();
+        System.out.println("Saisie incorrecte.");
+        System.out.println("Veuillez recommencer");
+        System.out.println();
+    }
+
+    public static void displayGoodByeMessage(){
+        System.out.println();
+        System.out.println("Bye bye.");
+        System.out.println();
+    }
+
+    public static void displayBackToPrincipalMenuMessage(){
+        System.out.println();
+        System.out.println("Retour au Menu principal");
+        System.out.println();
+    }
+
+    public static int getNumberSelection(){
+        try {
+
+            return Integer.parseInt(getUserEntry());
+
+        } catch (NumberFormatException e) {
+
+            return -1;
+        }
+
+    }
+
+    public static boolean executeUserChoice(int userChoice){
+
+        switch (userChoice) {
+            case 1:
+
+                leaveEndGameMenu=false;
+
+                return true;
+            case 2:
+
+                displayBackToPrincipalMenuMessage();
+
+                leaveEndGameMenu=true;
+
+                return true;
+
+            case 3:
+
+                displayGoodByeMessage();
+
+                System.exit(0);
+
+                return true;
+
+            default:
+
+                displayIncorrectEntryMessage();
+
+                return false;
+        }
+    }
+
+
     /**
      * Methode contenant le menu
      *
      * @return
      *          retourne un booleen pour sortir de la boucle.
      */
-    public static boolean enGameMenu() {
 
-        boolean b = false;
+    public static boolean endGameMenu() {
 
-        boolean again01 = false;
+        boolean validSelection=false;
 
-        while (!again01) {
+        while (!validSelection) {
 
-            boolean selectedMenu = false;
+            displayEndGameMenu();
 
-            while (!selectedMenu) {
-
-                boolean corectValueForMenu = false;
-
-                int numberSelectionChoiceMenu = 0;
-
-                while (!corectValueForMenu) {
-
-                    System.out.println("Entrez le numéro correspondant au mode de jeu voulu.");
-                    System.out.println("1 - Rejouer");
-                    System.out.println("2 - Menu Principal");
-                    System.out.println("3 - Quitter");
-
-                    Scanner sc = new Scanner(System.in);
-                    String selectionChoiceMenu = sc.nextLine();
-
-
-                    try {
-
-                        numberSelectionChoiceMenu = Integer.parseInt(selectionChoiceMenu);
-                        corectValueForMenu = true;
-
-                    } catch (NumberFormatException e) {
-
-                        System.out.println();
-                        System.out.println("Saisie incorrect.");
-                        System.out.println("Veuillez recommencer");
-                        System.out.println();
-
-                    }
-                }
-
-
-                switch (numberSelectionChoiceMenu) {
-                    case 1:
-
-                        selectedMenu = true;
-                        again01 = true;
-
-                        break;
-
-                    case 2:
-
-                        System.out.println();
-                        System.out.println("Retour au Menu principal");
-                        System.out.println();
-
-                        b = true;
-                        selectedMenu = true;
-                        again01 = true;
-////                        again = true;
-
-                        break;
-
-                    case 3:
-
-                        System.out.println();
-                        System.out.println("Bye bye.");
-                        System.out.println();
-
-                        System.exit(0);
-
-                        break;
-
-                    default:
-
-                        System.out.println();
-                        System.out.println("Saisie incorrect.");
-                        System.out.println("Veuillez recommencer");
-                        System.out.println();
-                }
-            }
+            validSelection=executeUserChoice(getNumberSelection());
         }
-        return b;
+        return leaveEndGameMenu;
     }
 }

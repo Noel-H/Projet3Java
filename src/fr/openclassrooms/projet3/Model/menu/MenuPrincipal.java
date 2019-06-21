@@ -9,75 +9,76 @@ import java.util.Scanner;
  */
 public class MenuPrincipal {
 
+    public static String getUserEntry(){
+        Scanner sc = new Scanner(System.in);
+        return sc.nextLine();
+    }
+
+    public static void displayPrincipalMenu(){
+        System.out.println("Que voulez vous faire?");
+        System.out.println("1 - Jouer (Mode +/-)");
+        System.out.println("2 - Quitter");
+    }
+
+    public static void displayIncorrectEntryMessage(){
+        System.out.println();
+        System.out.println("Saisie incorrecte.");
+        System.out.println("Veuillez recommencer");
+        System.out.println();
+    }
+
+    public static void displayGoodByeMessage(){
+        System.out.println();
+        System.out.println("Bye bye.");
+        System.out.println();
+    }
+
+    public static int getNumberSelection(){
+        try {
+
+            return Integer.parseInt(getUserEntry());
+
+        } catch (NumberFormatException e) {
+
+            return -1;
+        }
+
+    }
+
+    public static boolean executeUserChoice(int userChoice) {
+        switch (userChoice) {
+            case 1:
+
+                MenuSelectionDeMode.modeDeJeuMenu();
+                return false;
+            case 2:
+
+                displayGoodByeMessage();
+
+                System.exit(0);
+
+                return true;
+
+            default:
+
+                displayIncorrectEntryMessage();
+
+                return false;
+        }
+    }
+
     /**
      *Methode du menu principal
      */
     public static void principalMenu() {
 
-        boolean again = false;
+        boolean correctSelection = false;
 
-        while (!again) {
+        while (!correctSelection) {
 
-            boolean selectedMenu = false;
+            displayPrincipalMenu();
 
-            while (!selectedMenu) {
-
-                boolean corectValueForMenu = false;
-
-                int numberSelectionChoiceMenu = 0;
-
-                while (!corectValueForMenu) {
-
-                    System.out.println("Entrez le numéro correspondant au mode de jeu voulu.");
-                    System.out.println("1 - Mode +/-");
-                    System.out.println("2 - Quitter");
-
-                    Scanner sc = new Scanner(System.in);
-                    String selectionChoiceMenu = sc.nextLine();
-
-
-                    try {
-
-                        numberSelectionChoiceMenu = Integer.parseInt(selectionChoiceMenu);
-                        corectValueForMenu = true;
-
-                    } catch (NumberFormatException e) {
-
-                        System.out.println();
-                        System.out.println("Saisie incorrect.");
-                        System.out.println("Veuillez recommencer");
-                        System.out.println();
-
-                    }
-                }
-
-                switch (numberSelectionChoiceMenu) {
-                    case 1:
-
-                        MenuSelectionDeMode.modeDeJeuMenu();
-                        selectedMenu = true;
-
-                        break;
-
-
-                    case 2:
-
-                        System.out.println();
-                        System.out.println("Bye bye.");
-                        System.out.println();
-
-                        System.exit(0);
-
-                        break;
-
-                    default:
-
-                        System.out.println();
-                        System.out.println("Saisie incorrect.");
-                        System.out.println("Veuillez recommencer");
-                        System.out.println();
-                }
-            }
+            correctSelection=executeUserChoice(getNumberSelection());
         }
     }
 }

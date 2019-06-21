@@ -1,5 +1,6 @@
 package fr.openclassrooms.projet3;
 
+import fr.openclassrooms.projet3.Model.menu.MenuFinDePartie;
 import fr.openclassrooms.projet3.Model.option.Configuration;
 import fr.openclassrooms.projet3.Model.menu.MenuPrincipal;
 import org.apache.log4j.LogManager;
@@ -34,6 +35,8 @@ public class Main {
         }
 
         MenuPrincipal.principalMenu();
+
+        MenuFinDePartie test= new MenuFinDePartie();
     }
 }
 

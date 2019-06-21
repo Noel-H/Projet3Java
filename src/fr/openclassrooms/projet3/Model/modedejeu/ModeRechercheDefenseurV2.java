@@ -87,6 +87,6 @@ public class ModeRechercheDefenseurV2 {
                     winConditionOk = true;
                 }
             }
-        } while (!MenuFinDePartie.enGameMenu());
+        } while (!MenuFinDePartie.endGameMenu());
     }
 }

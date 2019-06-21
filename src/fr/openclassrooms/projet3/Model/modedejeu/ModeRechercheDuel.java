@@ -110,6 +110,6 @@ public class ModeRechercheDuel {
                     winConditionOk = true;
                 }
             }
-        } while (!MenuFinDePartie.enGameMenu());
+        } while (!MenuFinDePartie.endGameMenu());
     }
 }
