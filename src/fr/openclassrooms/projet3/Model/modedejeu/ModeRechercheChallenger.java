@@ -1,5 +1,6 @@
 package fr.openclassrooms.projet3.Model.modedejeu;
 
+import fr.openclassrooms.projet3.Model.Model;
 import fr.openclassrooms.projet3.Model.menu.MenuFinDePartie;
 import fr.openclassrooms.projet3.Model.option.Configuration;
 import fr.openclassrooms.projet3.Model.option.Utilitaires;
@@ -17,7 +18,7 @@ public class ModeRechercheChallenger {
      *Methode pour le mode "Challenger".
      */
     public static void game() {
-        do {
+//        do {
 
             int nombreDeChiffreATrouver = Configuration.NB_NUMBER_LENGTH;
             int nbTour=0;
@@ -72,6 +73,6 @@ public class ModeRechercheChallenger {
                     winConditionOk = true;
                 }
             }
-        } while (!MenuFinDePartie.endGameMenu());
+//        } while (!Model.leaveEndGameMenu);
     }
 }

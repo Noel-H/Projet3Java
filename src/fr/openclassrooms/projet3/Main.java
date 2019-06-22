@@ -1,8 +1,8 @@
 package fr.openclassrooms.projet3;
 
-import fr.openclassrooms.projet3.Model.menu.MenuFinDePartie;
+import fr.openclassrooms.projet3.Controller.Controller;
 import fr.openclassrooms.projet3.Model.option.Configuration;
-import fr.openclassrooms.projet3.Model.menu.MenuPrincipal;
+import fr.openclassrooms.projet3.View.Displayer;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -30,13 +30,14 @@ public class Main {
 
         Configuration.ConfigParam();
 
-        if (args.length > 0 && args[0].equals("-d")){
+        if (args.length > 0 && args[0].equals("-d")) {
             Configuration.DEVELOPPER_MODE = true;
         }
 
-        MenuPrincipal.principalMenu();
-
-        MenuFinDePartie test= new MenuFinDePartie();
+        while (true){
+            Displayer.display();
+            Controller.parseInput(Displayer.getUserEntry());
+        }
     }
 }
 

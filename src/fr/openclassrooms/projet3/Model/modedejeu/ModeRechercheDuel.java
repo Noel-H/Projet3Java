@@ -1,5 +1,6 @@
 package fr.openclassrooms.projet3.Model.modedejeu;
 
+import fr.openclassrooms.projet3.Model.Model;
 import fr.openclassrooms.projet3.Model.menu.MenuFinDePartie;
 import fr.openclassrooms.projet3.Model.option.Configuration;
 import fr.openclassrooms.projet3.Model.option.Utilitaires;
@@ -18,7 +19,7 @@ public class ModeRechercheDuel {
      */
     public static void game() {
 
-        do {
+//        do {
 
             int nbTour=0;
             int loseCondition= Configuration.NB_TRY;
@@ -110,6 +111,6 @@ public class ModeRechercheDuel {
                     winConditionOk = true;
                 }
             }
-        } while (!MenuFinDePartie.endGameMenu());
+//        } while (!Model.leaveEndGameMenu);
     }
 }
