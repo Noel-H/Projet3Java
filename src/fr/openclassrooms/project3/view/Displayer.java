@@ -1,6 +1,6 @@
-package fr.openclassrooms.projet3.View;
+package fr.openclassrooms.project3.view;
 
-import fr.openclassrooms.projet3.Model.Model;
+import fr.openclassrooms.project3.model.Model;
 
 import java.util.Scanner;
 
@@ -25,13 +25,11 @@ public class Displayer {
         System.out.println();
     }
 
-    private static void displayBackToPrincipalMenuMessage(){
+    private static void displayBackToMainMenuMessage(){
         System.out.println();
         System.out.println("Retour au Menu principal");
         System.out.println();
     }
-
-    /////////////////////////////////////////////////////////////////////////////
 
     private static void displayGameModeSelectionMenu(){
         System.out.println();
@@ -43,9 +41,7 @@ public class Displayer {
         System.out.println("5 - Quitter");
     }
 
-    /////////////////////////////////////////////////////////////////////////////
-
-    private static void displayPrincipalMenu(){
+    private static void displayMainMenu(){
         System.out.println("Que voulez vous faire?");
         System.out.println("1 - Jouer (Mode +/-)");
         System.out.println("2 - Quitter");
@@ -57,28 +53,32 @@ public class Displayer {
     }
 
     public static void display(){
-
         switch (Model.getInfo()) {
             case Model.INFO_ERROR_ENTRY:
                 displayIncorrectEntryMessage();
                 break;
+
             case Model.INFO_BYEBYE:
                 displayGoodByeMessage();
                 break;
+
             case Model.INFO_BACK_MAIN_MENU:
-                displayBackToPrincipalMenuMessage();
+                displayBackToMainMenuMessage();
                 break;
+
             default:
                 break;
         }
 
         switch (Model.getMenu()){
             case Model.MENU_MAIN:
-                displayPrincipalMenu();
+                displayMainMenu();
                 break;
+
             case Model.MENU_MODE:
                 displayGameModeSelectionMenu();
                 break;
+
             case Model.MENU_END:
                 displayEndGameMenu();
                 break;

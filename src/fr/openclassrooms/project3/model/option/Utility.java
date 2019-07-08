@@ -1,11 +1,11 @@
-package fr.openclassrooms.projet3.Model.option;
+package fr.openclassrooms.project3.model.option;
 
 /**
  * Cette class contient un ensemble de methode utile et reutilisable pour le programme.
  *
  * @author NoelH
  */
-public class Utilitaires {
+public class Utility {
 
 
     /**
@@ -15,7 +15,6 @@ public class Utilitaires {
      * @return Retourne un nombre aleatoire.
      */
     public static String randomNumberGenerator(int quantityToGenerate) {
-
         String generatedNumber = "";
 
         for (int i = 0; i < quantityToGenerate; i++) {
@@ -33,9 +32,7 @@ public class Utilitaires {
      * @return une chaine de caractere constitue de symbole tel que "+" "-" "="
      */
     public static String numberComparator(String numberToCompare1, String numberToCompare2) {
-
         String comparedNumber = "";
-
         String operator;
 
         for (int i = 0; i < numberToCompare2.length(); i++) {
@@ -48,11 +45,8 @@ public class Utilitaires {
             }
 
             comparedNumber = comparedNumber + operator;
-
         }
-
         return comparedNumber;
-
     }
 
     /**
@@ -63,7 +57,6 @@ public class Utilitaires {
      * @return La chaine de caracatere formatter
      */
     public static String styleFormat1(String stringToFormat) {
-
         String formatedString = "";
 
         for (int i = 0; i < stringToFormat.length(); i++) {
@@ -71,9 +64,7 @@ public class Utilitaires {
 
             formatedString = formatedString + "| " + charToFormat + " ";
         }
-
         return formatedString + "|";
-
     }
 
     /**
@@ -84,22 +75,15 @@ public class Utilitaires {
      * @return Retourne vrai ou faux en fonction du resultat
      */
     public static boolean tryCatchMethod(String numberToTest, int stringLengthToTest) {
-
         if (numberToTest.length() == stringLengthToTest) {
-
             try {
-
                 for (int i = 0; i < stringLengthToTest; i++) {
-
                     Integer.parseInt(Character.toString(numberToTest.charAt(i)));
                 }
             } catch (NumberFormatException e) {
-
                 return false;
             }
-
             return true;
-
         } else {
             return false;
         }
@@ -108,23 +92,19 @@ public class Utilitaires {
     /**
      * Permet de vérifier le format de l'indice donne par l'user
      *
-     * @param indiceToTest          Correspond à l'indice donne par l'user
+     * @param answerToTest          Correspond à l'indice donne par l'user
      * @param stringLengthToTest    Correspond à la longueur que doit avoir la chaine de caractere
      * @return                      Retourne vrai ou faux en fonction du resultat
      */
-    public static boolean indiceFormatVerification(String indiceToTest, int stringLengthToTest) {
-
+    public static boolean indiceFormatVerification(String answerToTest, int stringLengthToTest) {
         int correctIndiceFormat = 0;
 
-        if (indiceToTest.length() == stringLengthToTest) {
-
+        if (answerToTest.length() == stringLengthToTest) {
             for (int i = 0; i < stringLengthToTest; i++) {
-
-                if (Character.toString(indiceToTest.charAt(i)).equals("=") || Character.toString(indiceToTest.charAt(i)).equals("+") || Character.toString(indiceToTest.charAt(i)).equals("-")) {
+                if (Character.toString(answerToTest.charAt(i)).equals("=") || Character.toString(answerToTest.charAt(i)).equals("+") || Character.toString(answerToTest.charAt(i)).equals("-")) {
                     correctIndiceFormat++;
                 }
             }
-
             if (correctIndiceFormat == stringLengthToTest){
                 return true;
             } else {
@@ -170,7 +150,6 @@ public class Utilitaires {
      *          Retourne une chaine dde caractere correspond au resultat de la dichotomie
      */
     public static String rechercheDichotomique(int[][] DFM, int codeLength) {
-
         for (int i = 0; i < codeLength; i++) {
             DFM[i][0] = 0;
             DFM[i][1] = 10;
@@ -178,6 +157,7 @@ public class Utilitaires {
         }
 
         String rCode = "";
+
         for (int i = 0; i < codeLength; i++) {
             rCode = rCode + DFM[i][2];
         }
@@ -197,7 +177,6 @@ public class Utilitaires {
      *          Retourne une chaine de caractere correspondant au nouveau code generer
      */
     public static String rechercheDichotomique(int[][] DFM, String lastIndice, String testCode) {
-
         for (int i = 0; i < lastIndice.length(); i++) {
             if (Character.toString(lastIndice.charAt(i)).equals("+")) {
                 DFM[i][0] = (Integer.parseInt(Character.toString(testCode.charAt(i))));
@@ -209,6 +188,7 @@ public class Utilitaires {
         }
 
         String rCode = "";
+
         for (int i = 0; i < lastIndice.length(); i++) {
             rCode = rCode + DFM[i][2];
         }

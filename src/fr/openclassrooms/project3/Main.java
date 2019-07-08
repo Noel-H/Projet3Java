@@ -1,23 +1,18 @@
-package fr.openclassrooms.projet3;
+package fr.openclassrooms.project3;
 
-import fr.openclassrooms.projet3.Controller.Controller;
-import fr.openclassrooms.projet3.Model.option.Configuration;
-import fr.openclassrooms.projet3.View.Displayer;
+import fr.openclassrooms.project3.controller.Controller;
+import fr.openclassrooms.project3.model.option.Configuration;
+import fr.openclassrooms.project3.view.Displayer;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 /**
- * Class fr.openclassrooms.projet3.Main
+ * Class fr.openclassrooms.project3.Main
  *
  * @author Noel-H
  */
 public class Main {
-
-    //---------------------------------------------------------Log4j
     static Logger logger = LogManager.getLogger(Main.class);
-
-    //---------------------------------------------------------
-
 
     /**
      * Methode main
@@ -25,8 +20,7 @@ public class Main {
      * @param args Parametre args
      */
     static public void main(String[] args) {
-
-        logger.trace("Entering fr.openclassrooms.projet3.Model.menu.MenuPrincipal.");
+        logger.trace("Entering fr.openclassrooms.project3.model.menu.MainMenu.");
 
         Configuration.ConfigParam();
 
@@ -40,4 +34,3 @@ public class Main {
         }
     }
 }
-
