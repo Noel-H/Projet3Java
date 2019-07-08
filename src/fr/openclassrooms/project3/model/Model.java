@@ -4,6 +4,9 @@ import fr.openclassrooms.project3.model.gamemode.Challenger;
 import fr.openclassrooms.project3.model.gamemode.Defender;
 import fr.openclassrooms.project3.model.gamemode.Duel;
 
+/**
+ * 
+ */
 public class Model {
 
     public static final int MENU_MAIN = 0;
@@ -26,14 +29,25 @@ public class Model {
 
     private static int lastGame = LAST_GAME_NONE;
 
+    /**
+     *
+     * @return
+     */
     public static int getInfo(){
         return info;
     }
 
+    /**
+     *
+     * @return
+     */
     public static int getMenu(){
         return menu;
     }
 
+    /**
+     *
+     */
     public static void replayLastGame(){
         switch (lastGame){
             case LAST_GAME_NONE:
@@ -51,6 +65,11 @@ public class Model {
 
     }
 
+    /**
+     *
+     * @param userChoice
+     * @return
+     */
     private static boolean executeUserChoiceMainMenu(int userChoice) {
         switch (userChoice) {
             case 1:
@@ -68,6 +87,11 @@ public class Model {
         }
     }
 
+    /**
+     *
+     * @param userChoice
+     * @return
+     */
     private static boolean executeUserChoiceGameModeSelection(int userChoice){
         switch (userChoice) {
             case 1:
@@ -104,6 +128,11 @@ public class Model {
         }
     }
 
+    /**
+     *
+     * @param userChoice
+     * @return
+     */
     private static boolean executeUserChoiceEndGameMenu(int userChoice){
         switch (userChoice) {
             case 1:
@@ -126,6 +155,10 @@ public class Model {
         }
     }
 
+    /**
+     *
+     * @param selection
+     */
     public static void executeUserChoice(int selection){
         info = INFO_NONE;
         switch (menu) {

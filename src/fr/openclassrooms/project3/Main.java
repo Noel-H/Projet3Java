@@ -17,7 +17,7 @@ public class Main {
     /**
      * Methode main
      *
-     * @param args Parametre args
+     * @param args = Utiliser "-d" Pour activer le mode developpeur.
      */
     static public void main(String[] args) {
         logger.trace("Entering fr.openclassrooms.project3.model.menu.MainMenu.");

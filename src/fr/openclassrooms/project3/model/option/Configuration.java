@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * Cette Class permet la configuration de certain element du programme.
+ */
 public class Configuration {
 
     public static int NB_TRY = 6;
@@ -14,6 +17,11 @@ public class Configuration {
 
     static public Properties config;
 
+    /**
+     * Methode qui permet de charger le fichier de configuration.
+     *
+     * @return
+     */
     static private boolean loadConfig() {
 
         config = new Properties();
@@ -29,6 +37,11 @@ public class Configuration {
         return true;
     }
 
+    /**
+     * Methode qui permet de verififer les valeurs contenu dans le fichier de configuration.
+     *
+     * Si celle ci sont incorrecte, une valeur par defaut est utilise.
+     */
     public static void ConfigParam(){
         if (loadConfig()) {
             try {
