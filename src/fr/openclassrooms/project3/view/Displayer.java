@@ -1,11 +1,14 @@
 package fr.openclassrooms.project3.view;
 
+import fr.openclassrooms.project3.Main;
 import fr.openclassrooms.project3.model.Model;
 
 import java.util.Scanner;
 
 /**
+ * Class fr.openclassrooms.project3.view.Displayer
  *
+ * @author NoelH
  */
 public class Displayer {
 

@@ -5,7 +5,9 @@ import fr.openclassrooms.project3.model.gamemode.Defender;
 import fr.openclassrooms.project3.model.gamemode.Duel;
 
 /**
- * 
+ * Class fr.openclassrooms.project3.model.Model
+ *
+ * @author NoelH
  */
 public class Model {
 
@@ -30,6 +32,7 @@ public class Model {
     private static int lastGame = LAST_GAME_NONE;
 
     /**
+     * Methode qui permet de recuperer la valeur de la variable info
      *
      * @return
      */
@@ -38,6 +41,7 @@ public class Model {
     }
 
     /**
+     * Methode qui permet de recuperer la valeur de la variable menu
      *
      * @return
      */
@@ -46,7 +50,7 @@ public class Model {
     }
 
     /**
-     *
+     * Methode qui permet d'enrengistrer le dernier mode de jeu jouer dans la variable lastGame
      */
     public static void replayLastGame(){
         switch (lastGame){
@@ -66,8 +70,9 @@ public class Model {
     }
 
     /**
+     * Methode qui modifie les variables necessaires en fonction de la saisie utilisateur
      *
-     * @param userChoice
+     * @param userChoice = saisie recuperer avec la methode parseInput
      * @return
      */
     private static boolean executeUserChoiceMainMenu(int userChoice) {
@@ -88,8 +93,9 @@ public class Model {
     }
 
     /**
+     * Methode qui modifie les variables necessaires en fonction de la saisie utilisateur
      *
-     * @param userChoice
+     * @param userChoice = saisie recuperer avec la methode parseInput
      * @return
      */
     private static boolean executeUserChoiceGameModeSelection(int userChoice){
@@ -129,8 +135,9 @@ public class Model {
     }
 
     /**
+     * Methode qui modifie les variables necessaires en fonction de la saisie utilisateur
      *
-     * @param userChoice
+     * @param userChoice = saisie recuperer avec la methode parseInput
      * @return
      */
     private static boolean executeUserChoiceEndGameMenu(int userChoice){
@@ -156,8 +163,9 @@ public class Model {
     }
 
     /**
+     * Methode qui modifie les variables necessaires en fonction de la saisie utilisateur
      *
-     * @param selection
+     * @param selection = saisie recuperer avec la methode parseInput
      */
     public static void executeUserChoice(int selection){
         info = INFO_NONE;
