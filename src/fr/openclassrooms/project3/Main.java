@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
  * @author Noel-H
  */
 public class Main {
-    static Logger logger = LogManager.getLogger(Main.class);
+    public static final Logger logger = LogManager.getLogger("GLOBAL");
 
     /**
      * Methode main
@@ -20,7 +20,6 @@ public class Main {
      * @param args = Utiliser "-d" Pour activer le mode developpeur.
      */
     static public void main(String[] args) {
-        logger.trace("Entering fr.openclassrooms.project3.model.menu.MainMenu.");
 
         Configuration.ConfigParam();
 

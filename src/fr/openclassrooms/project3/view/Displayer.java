@@ -16,6 +16,8 @@ public class Displayer {
      * Menu de fin de jeu
      */
     private static void displayEndGameMenu(){
+        System.out.println();
+        Main.logger.trace("Entering the End Game Menu");
         System.out.println("Partie terminée. Voulez vous rejouez?");
         System.out.println("1 - Rejouer");
         System.out.println("2 - Menu Principal");
@@ -27,9 +29,9 @@ public class Displayer {
      */
     private static void displayIncorrectEntryMessage(){
         System.out.println();
+        Main.logger.error("Error, wrong input");
         System.out.println("Saisie incorrecte.");
         System.out.println("Veuillez recommencer");
-        System.out.println();
     }
 
     /**
@@ -37,8 +39,8 @@ public class Displayer {
      */
     private static void displayGoodByeMessage(){
         System.out.println();
+        Main.logger.trace("Exit application");
         System.out.println("Bye bye.");
-        System.out.println();
     }
 
     /**
@@ -47,7 +49,6 @@ public class Displayer {
     private static void displayBackToMainMenuMessage(){
         System.out.println();
         System.out.println("Retour au Menu principal");
-        System.out.println();
     }
 
     /**
@@ -55,6 +56,7 @@ public class Displayer {
      */
     private static void displayGameModeSelectionMenu(){
         System.out.println();
+        Main.logger.trace("Entering the Game Mode Selection Menu");
         System.out.println("Choisissez le mode de jeu voulu.");
         System.out.println("1 - Challenger");
         System.out.println("2 - Defenseur");
@@ -67,6 +69,8 @@ public class Displayer {
      * Menu principal
      */
     private static void displayMainMenu(){
+        System.out.println();
+        Main.logger.trace("Entering Main Menu");
         System.out.println("Que voulez vous faire?");
         System.out.println("1 - Jouer (Mode +/-)");
         System.out.println("2 - Quitter");
@@ -91,6 +95,7 @@ public class Displayer {
 
             case Model.INFO_BYEBYE:
                 displayGoodByeMessage();
+                System.exit(0);
                 break;
 
             case Model.INFO_BACK_MAIN_MENU:

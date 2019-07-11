@@ -83,7 +83,6 @@ public class Model {
 
             case 2:
                 info = INFO_BYEBYE;
-                System.exit(0);
                 return true;
 
             default:
@@ -125,7 +124,6 @@ public class Model {
 
             case 5:
                 info = INFO_BYEBYE;
-                System.exit(0);
                 return true;
 
             default:
@@ -153,7 +151,6 @@ public class Model {
 
             case 3:
                 info = INFO_BYEBYE;
-                System.exit(0);
                 return true;
 
             default:
