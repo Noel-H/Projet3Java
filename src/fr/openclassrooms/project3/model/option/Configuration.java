@@ -27,7 +27,7 @@ public class Configuration {
         config = new Properties();
 
         try {
-            InputStream file = new FileInputStream("src/config.properties");
+            InputStream file = new FileInputStream("config.properties");
             config.load(file);
         } catch (FileNotFoundException e) {
             return true;
