@@ -3,8 +3,8 @@ package fr.openclassrooms.project3;
 import fr.openclassrooms.project3.controller.Controller;
 import fr.openclassrooms.project3.model.option.Configuration;
 import fr.openclassrooms.project3.view.Displayer;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Class fr.openclassrooms.project3.Main
@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
  * @author Noel-H
  */
 public class Main {
-    public static final Logger logger = LogManager.getLogger("GLOBAL");
+    public static Logger logger = LogManager.getLogger("GLOBAL");
 
     /**
      * Methode main

@@ -5,22 +5,23 @@ Guide d'utilisation
 
 1/
 
-a.Telechargez l'application a cette adresse : "-"
+a.Telechargez et installer le JRE (Java) a cette adresse : "https://www.java.com/fr/download/"
 
-b.Decompresser le fichier dans un dossier.
+b.Telechargez l'application a cette adresse : "https://github.com/Noel-H/Projet3Java/archive/master.zip"
 
-c.Ouvrer un terminal et rendez vous dans le dossier "src" avec l'aide de la commande "cd"
+c.Decompressez le fichier.
 
-d.Compiler l'application en utilisant la commande "javac fr.openclassrooms.project3.Main.java"
+d.Ouvrez un terminal et rendez vous dans le dossier "Projet3Java".
+
+e.Compilez l'application en utilisant la commande : 
+"javac -d .\build\ -cp .\lib\* .\src\fr\openclassrooms\project3\Main.java .\src\fr\openclassrooms\project3\controller\Controller.java .\src\fr\openclassrooms\project3\model\gamemode\Challenger.java .\src\fr\openclassrooms\project3\model\gamemode\Defender.java .\src\fr\openclassrooms\project3\model\gamemode\Duel.java .\src\fr\openclassrooms\project3\model\option\Configuration.java .\src\fr\openclassrooms\project3\model\option\Utility.java .\src\fr\openclassrooms\project3\model\Model.java .\src\fr\openclassrooms\project3\view\Displayer.java"
+
+f.Entrez dans le repertoire "build" avec la commande : "cd .\build\"
+
+g.Lancez l'application en utilisant la commande "java fr.openclassrooms.project3.Main"
+
 
 2/
+a.Ajoutez le parametre "-d" pour Activer le mode developper, exemple : "java fr.openclassrooms.project3.Main -d"
 
-a.Rendez vous dans le dossier "out/production/Projet3Java" avec l'aide d'un terminal
-
-b.Lancer l'application en utilisant la commande "java fr.openclassrooms.project3.Main"
-
-c.Ajouter le paramètre "-d" pour Activer le mode developper, exemple : "java fr.openclassrooms.project3.Main -d"
-
-3/
-
-a.Certain paramètres sont configurable en changeant leur valeur dans le fichier "config.properties", exemple : "developper_mode = false" ou "developper_mode = true"
+b.Certain parametres sont configurable en changeant leur valeur dans le fichier "config.properties", exemple : "developper_mode = false" ou "developper_mode = true"
