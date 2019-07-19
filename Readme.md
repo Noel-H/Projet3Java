@@ -11,7 +11,7 @@ b.Telechargez l'application a cette adresse : "https://github.com/Noel-H/Projet3
 
 c.Decompressez le fichier.
 
-d.Ouvrez un terminal et rendez vous dans le dossier "Projet3Java".
+d.Ouvrez un terminal et rendez vous dans le dossier "Projet3Java-master".
 
 e.Compilez l'application en utilisant la commande : 
 "javac -d .\build\ -cp .\lib\* .\src\fr\openclassrooms\project3\Main.java .\src\fr\openclassrooms\project3\controller\Controller.java .\src\fr\openclassrooms\project3\model\gamemode\Challenger.java .\src\fr\openclassrooms\project3\model\gamemode\Defender.java .\src\fr\openclassrooms\project3\model\gamemode\Duel.java .\src\fr\openclassrooms\project3\model\option\Configuration.java .\src\fr\openclassrooms\project3\model\option\Utility.java .\src\fr\openclassrooms\project3\model\Model.java .\src\fr\openclassrooms\project3\view\Displayer.java"
